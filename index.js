@@ -19,6 +19,13 @@ app.use(bodyParser.json());
 // SETTING UP CORS
 app.use(cors());
 
+
+// ROUTERS 
+const {BLOGROUTER} = require('./routers/blogRouter');
+
+//ROUTES
+app.use("/api/v1/blogs",BLOGROUTER);
+
 // STARTING SERVER
 
 app.listen(PORT, () => {
