@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const blogsSchema = new mongoose.Schema({
-
+  title: {
+    type: String,
+    required: true,
+  },
   imgUrl: {
     type: String,
     required: true,
@@ -18,11 +21,7 @@ const blogsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  title: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "vehicle",
-    required: true,
-  },
+ 
 });
 
 // ----------------- CREATING MODEL -----------------
