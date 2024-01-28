@@ -23,7 +23,7 @@ const readBlogDB = async (query, fields) => {
   try {
     const result = await BLOGMODEL.find(query).select(fields);
     if (result.length > 0) {
-      console.log(BLOG_MESSAGES.BLOG_READ, { userId: result[0].email });
+      console.log(BLOG_MESSAGES.BLOG_READ);
       return result;
     } else {
       console.log(BLOG_MESSAGES.BLOG_NOT_READ);
@@ -40,7 +40,6 @@ const readBlogDB = async (query, fields) => {
 
 const updateBlogDB = async (query, data, fields) => {
   try {
-    console.log(query, data);
     const result = await BLOGMODEL.findOneAndUpdate(query, data, {
       new: true,
     }).select(fields);

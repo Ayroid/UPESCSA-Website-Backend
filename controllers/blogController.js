@@ -120,23 +120,11 @@ const updateBlog = async (req, res) => {
 
 const deleteBlog = async (req, res) => {
   try {
-    const query = { user_id: req.user.user_id };
+    const query = { _id: req.query.id };
     const message = await DELETEBLOGDB(query);
     if (message) {
       console.log(BLOG_MESSAGES.BLOG_DELETED, { message });
-      const updated = await UPDATEBLOGDB(
-        { _id: req.user.user_id },
-        { $pull: { messages: message._id } }
-      );
-      if (updated) {
-        console.log(USER_MESSAGES.USER_UPDATED, { message });
-        return res.status(StatusCodes.OK).send(BLOG_MESSAGES.BLOG_DELETED);
-      } else {
-        console.log(USER_MESSAGES.ERROR_UPDATING_USER);
-        return res
-          .status(StatusCodes.INTERNAL_SERVER_ERROR)
-          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
-      }
+      return res.status(StatusCodes.OK).send(BLOG_MESSAGES.BLOG_DELETED);
     } else {
       console.log(BLOG_MESSAGES.BLOG_NOT_DELETED, { message });
       return res
