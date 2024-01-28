@@ -2,11 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import path from "path";
 import { StatusCodes } from "http-status-codes";
-import {
-  BLOG_MESSAGES,
-  SERVER_MESSAGES,
-  USER_MESSAGES,
-} from "../utils/messages/messages.js";
+import { BLOG_MESSAGES, SERVER_MESSAGES } from "../utils/messages/messages.js";
 
 // CONSTANTS
 const SERVER_URI = process.env.SERVER_URI;
