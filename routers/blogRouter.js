@@ -1,19 +1,19 @@
-const express = require('express');
+import express from "express";
+import { UPLOAD } from "../utils/multer.js";
 
-const BLOG = express.Router();
+import {
+  CREATEBLOG,
+  UPDATEBLOG,
+  READBLOG,
+  DELETEBLOG,
+} from "../controllers/blogController.js";
 
-const {
-    CREATEBLOGPOST,
-    UPDATEBLOGPOST,
-    GETBLOGPOST,
-    DELETEBLOGPOST
-} = require('../controllers.js/blogControllers');
+const BlogRouter = express.Router();
 
-BLOG.post("/",CREATEBLOGPOST);
-BLOG.get("/",GETBLOGPOST);
-BLOG.patch("/:id",UPDATEBLOGPOST);
-BLOG.delete("/:id",DELETEBLOGPOST);
+BlogRouter.route("/")
+  .get(READBLOG)
+  .post(UPLOAD.fields([{ name: "blogImg", maxCount: 1 }]), CREATEBLOG)
+  .put(UPDATEBLOG)
+  .delete(DELETEBLOG);
 
-module.exports = {
-    BLOGROUTER : BLOG,
-}
+export { BlogRouter as BLOGROUTER };
