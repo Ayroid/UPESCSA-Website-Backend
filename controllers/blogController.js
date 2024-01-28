@@ -41,7 +41,7 @@ const createBlog = async (req, res) => {
 
     console.log(req.files["blogImg"][0].originalname);
 
-    const blogImageURL = `${SERVER_URI}/images/blogs/${blogTitle}}${path.extname(
+    const blogImageURL = `${SERVER_URI}/images/blogs/${blogTitle}${path.extname(
       req.files["blogImg"][0].originalname
     )}`;
 
