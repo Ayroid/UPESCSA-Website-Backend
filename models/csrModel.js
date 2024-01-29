@@ -1,25 +1,15 @@
 import mongoose from "mongoose";
 import moment from "moment-timezone";
 
-const userSchema = new mongoose.Schema({
-  username: {
+const csrSchema = new mongoose.Schema({
+  csrYear: {
     type: String,
     required: true,
   },
-  email: {
+  csrImageURL: {
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  messages: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Message",
-    },
-  ],
   created_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
@@ -32,6 +22,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const userModel = mongoose.model("User", userSchema);
+const csrModel = mongoose.model("csr", csrSchema);
 
-export { userModel as USERMODEL };
+export { csrModel as CSRMODEL };

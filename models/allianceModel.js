@@ -1,39 +1,31 @@
 import mongoose from "mongoose";
 import moment from "moment-timezone";
 
-const blogSchema = new mongoose.Schema({
-  blogTitle: {
+const allianceSchema = new mongoose.Schema({
+  allianceName: {
     type: String,
     required: true,
   },
-  blogAuthor: {
+  allianceImageURL: {
     type: String,
     required: true,
   },
-  blogSummary: {
+  allianceWebsiteURL: {
     type: String,
     required: true,
   },
-  blogImageURL: {
-    type: String,
-    required: true,
-  },
-  blogURL: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
+  created_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: true,
   },
-  updatedAt: {
+  updated_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: false,
   },
 });
 
-const blogModel = mongoose.model("blog", blogSchema);
+const allianceModel = mongoose.model("alliance", allianceSchema);
 
-export { blogModel as BLOGMODEL };
+export { allianceModel as ALLIANCEMODEL };
