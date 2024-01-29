@@ -55,4 +55,28 @@ const BLOG_MESSAGES = {
   ERROR_DELETING_BLOG: "Error Deleting Blog ❌ ",
 };
 
-export { DB_MESSAGES, SERVER_MESSAGES, USER_MESSAGES, BLOG_MESSAGES };
+const ALLIANCE_MESSAGES = {
+  ALLIANCE_ALREADY_EXISTS: "Alliance Already Exists ❌ ",
+  ALLIANCE_CREATED: "Alliance Created ✅ ",
+  ALLIANCE_NOT_CREATED: "Alliance Not Created ❌ ",
+  ALLIANCE_FOUND: "Alliance Found ✅ ",
+  ALLIANCE_NOT_FOUND: "Alliance Not Found ❌ ",
+  ALLIANCE_READ: "Alliance Read ✅ ",
+  ALLIANCE_NOT_READ: "Alliance Not Read ❌ ",
+  ALLIANCE_UPDATED: "Alliance Updated ✅ ",
+  ALLIANCE_NOT_UPDATED: "Alliance Not Updated ❌ ",
+  ALLIANCE_DELETED: "Alliance Deleted ✅ ",
+  ALLIANCE_NOT_DELETED: "Alliance Not Deleted ❌ ",
+  ERROR_CREATING_ALLIANCE: "Error Creating Alliance ❌ ",
+  ERROR_READING_ALLIANCE: "Error Reading Alliance ❌ ",
+  ERROR_UPDATING_ALLIANCE: "Error Updating Alliance ❌ ",
+  ERROR_DELETING_ALLIANCE: "Error Deleting Alliance ❌ ",
+};
+
+export {
+  DB_MESSAGES,
+  SERVER_MESSAGES,
+  USER_MESSAGES,
+  BLOG_MESSAGES,
+  ALLIANCE_MESSAGES,
+};

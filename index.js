@@ -5,6 +5,7 @@ import cors from "cors";
 import { Database } from "./config/database.js";
 
 // ROUTERS
+import { ALLIANCEROUTER } from "./routers/allianceRouter.js";
 import { BLOGROUTER } from "./routers/blogRouter.js";
 
 // CONFIG
@@ -33,6 +34,7 @@ app.use("/api/test", (req, res) => {
 });
 
 //ROUTES
+app.use("/api/alliance", ALLIANCEROUTER);
 app.use("/api/blogs", BLOGROUTER);
 
 // DATABASE DISCONNECTION
