@@ -1,39 +1,47 @@
 import mongoose from "mongoose";
 import moment from "moment-timezone";
 
-const blogSchema = new mongoose.Schema({
-  blogTitle: {
+const headsAndManagementSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
   },
-  blogAuthor: {
+  csaid: {
     type: String,
     required: true,
   },
-  blogSummary: {
+  position: {
     type: String,
     required: true,
   },
-  blogImageURL: {
+  category: {
     type: String,
     required: true,
   },
-  blogURL: {
-    type: String,
-    required: true,
+  committee: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "committee",
+    required: false,
   },
-  createdAt: {
+  linkedInURL: {
+    type: String,
+    required: false,
+  },
+  created_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: true,
   },
-  updatedAt: {
+  updated_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: false,
   },
 });
 
-const blogModel = mongoose.model("blog", blogSchema);
+const headsAndManagamentModel = mongoose.model(
+  "headsandmanagement",
+  headsAndManagementSchema
+);
 
-export { blogModel as BLOGMODEL };
+export { headsAndManagamentModel as HEADSANDMANAGEMENTMODEL };
