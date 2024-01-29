@@ -1,5 +1,5 @@
 import express from "express";
-import { UPLOAD } from "../utils/multer.js";
+import { UPLOAD } from "../middlewares/multer.js";
 
 import {
   CREATEBLOG,

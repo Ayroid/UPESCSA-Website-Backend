@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 dotenv.config();
-import path from "path";
 import { StatusCodes } from "http-status-codes";
 import { BLOG_MESSAGES, SERVER_MESSAGES } from "../utils/messages/messages.js";
 
@@ -35,11 +34,7 @@ const createBlog = async (req, res) => {
         .send(BLOG_MESSAGES.BLOG_ALREADY_EXISTS);
     }
 
-    console.log(req.files["blogImg"][0].originalname);
-
-    const blogImageURL = `${SERVER_URI}/images/blogs/${blogTitle}${path.extname(
-      req.files["blogImg"][0].originalname
-    )}`;
+    const blogImageURL = `${SERVER_URI}/images/blogs/${req.files["blogImg"][0].filename}`;
 
     const blog = await CREATEBLOGDB({
       blogTitle,

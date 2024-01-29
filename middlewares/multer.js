@@ -9,8 +9,8 @@ const storage = multer.diskStorage({
       case "blogImg":
         cb(null, "public/images/blogs");
         break;
-      case "userImg":
-        cb(null, "public/images/users");
+      case "allianceImg":
+        cb(null, "public/images/alliance");
         break;
       default:
         cb(null, "public/images/others");
@@ -22,8 +22,8 @@ const storage = multer.diskStorage({
       case "blogImg":
         cb(null, `${req.body.blogTitle}${path.extname(file.originalname)}`);
         break;
-      case "userImg":
-        cb(null, `${req.body.userName}${path.extname(file.originalname)}`);
+      case "allianceImg":
+        cb(null, `${req.body.allianceName}${path.extname(file.originalname)}`);
         break;
       default:
         cb(null, `${req.body.fileName}${path.extname(file.originalname)}`);
