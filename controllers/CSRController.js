@@ -62,7 +62,24 @@ const createCSR = async (req, res) => {
 };
 
 const deleteCSR = async (req, res) => {
-  res.send("deleteCRS");
+  try {
+    const query = { _id: req.query.id };
+    const message = await DELETECSRDB(query);
+    if (message) {
+      console.log(CSR_MESSAGES.CSR_DELETED, { message });
+      return res.status(StatusCodes.OK).send(CSR_MESSAGES.CSR_DELETED);
+    } else {
+      console.log(CSR_MESSAGES.CSR_NOT_DELETED, { message });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(CSR_MESSAGES.CSR_NOT_DELETED);
+    }
+  } catch (error) {
+    console.log(CSR_MESSAGES.ERROR_DELETING_CSR, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
 };
 
 const updateCSR = async (req, res) => {
