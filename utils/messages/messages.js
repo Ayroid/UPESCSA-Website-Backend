@@ -73,10 +73,29 @@ const ALLIANCE_MESSAGES = {
   ERROR_DELETING_ALLIANCE: "Error Deleting Alliance ❌ ",
 };
 
+const EVENT_MESSAGES = {
+  EVENT_ALREADY_EXISTS: "Event Already Exists ❌ ",
+  EVENT_CREATED: "Event Created ✅ ",
+  EVENT_NOT_CREATED: "Event Not Created ❌ ",
+  EVENT_FOUND: "Event Found ✅ ",
+  EVENT_NOT_FOUND: "Event Not Found ❌ ",
+  EVENT_READ: "Event Read ✅ ",
+  EVENT_NOT_READ: "Event Not Read ❌ ",
+  EVENT_UPDATED: "Event Updated ✅ ",
+  EVENT_NOT_UPDATED: "Event Not Updated ❌ ",
+  EVENT_DELETED: "Event Deleted ✅ ",
+  EVENT_NOT_DELETED: "Event Not Deleted ❌ ",
+  ERROR_CREATING_EVENT: "Error Creating Event ❌ ",
+  ERROR_READING_EVENT: "Error Reading Event ❌ ",
+  ERROR_UPDATING_EVENT: "Error Updating Event ❌ ",
+  ERROR_DELETING_EVENT: "Error Deleting Event ❌ ",  
+}
+
 export {
   DB_MESSAGES,
   SERVER_MESSAGES,
   USER_MESSAGES,
   BLOG_MESSAGES,
   ALLIANCE_MESSAGES,
+  EVENT_MESSAGES,
 };
