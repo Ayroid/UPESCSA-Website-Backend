@@ -39,7 +39,7 @@ app.use("/api/test", (req, res) => {
 app.use("/api/alliance", ALLIANCEROUTER);
 app.use("/api/blogs", BLOGROUTER);
 app.use("/api/events",EVENTROUTER);
-app.use("/api/crs",CSRROUTER);
+app.use("/api/csr",CSRROUTER);
 
 // DATABASE DISCONNECTION
 process.on("SIGINT", () => {

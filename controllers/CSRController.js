@@ -105,7 +105,26 @@ const updateCSR = async (req, res) => {
 };
 
 const getCSR = async (req, res) => {
-  res.send("getCRS");
+  try {
+    const query = !req.query._id ? {} : { _id: req.query.id };
+    const csr = await READCSRDB(query, fields);
+
+    if (csr.length > 0) {
+      console.log(CSR_MESSAGES.CSR_FOUND, { csr});
+
+      return res.status(StatusCodes.OK).send(csr);
+    } else {
+      console.log(CSR_MESSAGES.CSR_NOT_FOUND, { csr });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(CSR_MESSAGES.CSR_NOT_FOUND);
+    }
+  } catch (error) {
+    console.log(CSR_MESSAGES.ERROR_READING_CSR, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
 };
 
 export {
