@@ -66,8 +66,24 @@ const createEvent = async (req, res) => {
 };
 
 const deleteEvent = async (req, res) => {
-  res.send("Delete Event");
-};
+    try {
+        const query = { _id: req.query.id };
+        const message = await DELETEEVENTDB(query);
+        if (message) {
+          console.log(EVENT_MESSAGES.EVENT_DELETED, { message });
+          return res.status(StatusCodes.OK).send(EVENT_MESSAGES.EVENT_DELETED);
+        } else {
+          console.log(EVENT_MESSAGES.EVENT_NOT_DELETED, { message });
+          return res
+            .status(StatusCodes.NOT_FOUND)
+            .send(EVENT_MESSAGES.EVENT_NOT_DELETED);
+        }
+      } catch (error) {
+        console.log(EVENT_MESSAGES.ERROR_DELETING_EVENT, { error });
+        return res
+          .status(StatusCodes.INTERNAL_SERVER_ERROR)
+          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+      }};
 
 const updateEvent = async (req, res) => {
   res.send("Update Event");
