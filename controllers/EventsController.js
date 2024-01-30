@@ -74,8 +74,27 @@ const updateEvent = async (req, res) => {
 };
 
 const getEvent = async (req, res) => {
-  res.send("Get Event");
-};
+    try {
+        const query = !req.query._id ? {} : { _id: req.query.id };
+        const event = await READEVENTDB(query, fields);
+    
+        if (event.length > 0) {
+          console.log(EVENT_MESSAGES.EVENT_FOUND, { event });
+    
+          return res.status(StatusCodes.OK).send(event);
+        } else {
+          console.log(EVENT_MESSAGES.EVENT_NOT_FOUND, { event });
+          return res
+            .status(StatusCodes.NOT_FOUND)
+            .send(EVENT_MESSAGES.EVENT_NOT_FOUND);
+        }
+      } catch (error) {
+        console.log(EVENT_MESSAGES.ERROR_READING_EVENT, { error });
+        return res
+          .status(StatusCodes.INTERNAL_SERVER_ERROR)
+          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+      }
+    };
 
 export {
   createEvent as CREATEEVENT,
