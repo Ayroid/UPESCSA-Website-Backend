@@ -14,6 +14,10 @@ const committeeSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  committeePageURL: {
+    type: String,
+    required: false,
+  },
   committeeHeads: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "headsandmanagement",

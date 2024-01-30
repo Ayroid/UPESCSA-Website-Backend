@@ -27,7 +27,7 @@ import {
 
 const createCommittee = async (req, res) => {
   try {
-    const { committeeName, committeeDescription } = req.body;
+    const { committeeName, committeeDescription, committeePageURL } = req.body;
     const query = { committeeName };
 
     const committeeExists = await READCOMMITTEEDB(query, fields);
@@ -42,6 +42,7 @@ const createCommittee = async (req, res) => {
     const committee = await CREATECOMMITTEEDB({
       committeeName,
       committeeDescription,
+      committeePageURL,
       committeeImageURL,
     });
 
