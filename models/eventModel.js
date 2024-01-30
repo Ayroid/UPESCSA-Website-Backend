@@ -6,8 +6,8 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  eventImageURLs: {
-    type: [String],
+  eventImageURL: {
+    type: String,
     required: true,
   },
   eventYear: {

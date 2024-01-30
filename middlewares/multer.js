@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
         cb(null, "public/images/alliance");
         break;
       case "eventImg":
-        cb(null, "public/images/event");
+        cb(null, "public/images/events");
         break;
       default:
         cb(null, "public/images/others");

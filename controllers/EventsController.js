@@ -23,7 +23,7 @@ import {
 const createEvent = async (req, res) => {
   try {
     const { eventName, eventYear } = req.body;
-    const query = {eventName}
+    const query = { eventName };
 
     // Check if the event already exists
     const eventExists = await READEVENTDB(query, fields);
@@ -33,15 +33,13 @@ const createEvent = async (req, res) => {
         .send(EVENT_MESSAGES.EVENT_ALREADY_EXISTS);
     }
 
-    // Construct array of image URLs
-    const eventImageURLs = req.files["eventImg"].map(
-      (file) => `${SERVER_URI}/images/events/${file.filename}`
-    );
+    const eventImageURL = `${SERVER_URI}/images/events/${req.files["eventImg"][0].filename}`;
+
 
     // Create the event
     const event = await CREATEEVENTDB({
       eventName,
-      eventImageURLs,
+      eventImageURL,
       eventYear,
     });
 
@@ -66,68 +64,70 @@ const createEvent = async (req, res) => {
 };
 
 const deleteEvent = async (req, res) => {
-    try {
-        const query = { _id: req.query.id };
-        const message = await DELETEEVENTDB(query);
-        if (message) {
-          console.log(EVENT_MESSAGES.EVENT_DELETED, { message });
-          return res.status(StatusCodes.OK).send(EVENT_MESSAGES.EVENT_DELETED);
-        } else {
-          console.log(EVENT_MESSAGES.EVENT_NOT_DELETED, { message });
-          return res
-            .status(StatusCodes.NOT_FOUND)
-            .send(EVENT_MESSAGES.EVENT_NOT_DELETED);
-        }
-      } catch (error) {
-        console.log(EVENT_MESSAGES.ERROR_DELETING_EVENT, { error });
-        return res
-          .status(StatusCodes.INTERNAL_SERVER_ERROR)
-          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
-      }};
+  try {
+    const query = { _id: req.query.id };
+    const message = await DELETEEVENTDB(query);
+    if (message) {
+      console.log(EVENT_MESSAGES.EVENT_DELETED, { message });
+      return res.status(StatusCodes.OK).send(EVENT_MESSAGES.EVENT_DELETED);
+    } else {
+      console.log(EVENT_MESSAGES.EVENT_NOT_DELETED, { message });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(EVENT_MESSAGES.EVENT_NOT_DELETED);
+    }
+  } catch (error) {
+    console.log(EVENT_MESSAGES.ERROR_DELETING_EVENT, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
+};
 
 const updateEvent = async (req, res) => {
-    try {
-        const query = { _id: req.query.id };
-        const data = req.body;
-        const message = await UPDATEEVENTDB(query, data, fields);
-        if (message) {
-          console.log(EVENT_MESSAGES.EVENT_UPDATED, { message });
-          return res.status(StatusCodes.OK).send(message);
-        } else {
-          console.log(EVENT_MESSAGES.EVENT_NOT_UPDATED, { message });
-          return res
-            .status(StatusCodes.NOT_FOUND)
-            .send(EVENT_MESSAGES.EVENT_NOT_UPDATED);
-        }
-      } catch (error) {
-        console.log(EVENT_MESSAGES.ERROR_UPDATING_EVENT, { error });
-        return res
-          .status(StatusCodes.INTERNAL_SERVER_ERROR)
-          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
-      }};
+  try {
+    const query = { _id: req.query.id };
+    const data = req.body;
+    const message = await UPDATEEVENTDB(query, data, fields);
+    if (message) {
+      console.log(EVENT_MESSAGES.EVENT_UPDATED, { message });
+      return res.status(StatusCodes.OK).send(message);
+    } else {
+      console.log(EVENT_MESSAGES.EVENT_NOT_UPDATED, { message });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(EVENT_MESSAGES.EVENT_NOT_UPDATED);
+    }
+  } catch (error) {
+    console.log(EVENT_MESSAGES.ERROR_UPDATING_EVENT, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
+};
 
 const getEvent = async (req, res) => {
-    try {
-        const query = !req.query._id ? {} : { _id: req.query.id };
-        const event = await READEVENTDB(query, fields);
-    
-        if (event.length > 0) {
-          console.log(EVENT_MESSAGES.EVENT_FOUND, { event });
-    
-          return res.status(StatusCodes.OK).send(event);
-        } else {
-          console.log(EVENT_MESSAGES.EVENT_NOT_FOUND, { event });
-          return res
-            .status(StatusCodes.NOT_FOUND)
-            .send(EVENT_MESSAGES.EVENT_NOT_FOUND);
-        }
-      } catch (error) {
-        console.log(EVENT_MESSAGES.ERROR_READING_EVENT, { error });
-        return res
-          .status(StatusCodes.INTERNAL_SERVER_ERROR)
-          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
-      }
-    };
+  try {
+    const query = !req.query._id ? {} : { _id: req.query.id };
+    const event = await READEVENTDB(query, fields);
+
+    if (event.length > 0) {
+      console.log(EVENT_MESSAGES.EVENT_FOUND, { event });
+
+      return res.status(StatusCodes.OK).send(event);
+    } else {
+      console.log(EVENT_MESSAGES.EVENT_NOT_FOUND, { event });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(EVENT_MESSAGES.EVENT_NOT_FOUND);
+    }
+  } catch (error) {
+    console.log(EVENT_MESSAGES.ERROR_READING_EVENT, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
+};
 
 export {
   createEvent as CREATEEVENT,
