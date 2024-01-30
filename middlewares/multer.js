@@ -15,6 +15,9 @@ const storage = multer.diskStorage({
       case "eventImg":
         cb(null, "public/images/events");
         break;
+      case "csrImg":
+        cb(null, "public/images/csr");
+        break;
       default:
         cb(null, "public/images/others");
         break;
@@ -30,6 +33,9 @@ const storage = multer.diskStorage({
         break;
       case "eventImg":
         cb(null, `${req.body.eventName}${path.extname(file.originalname)}`);
+        break;
+      case "csrImg":
+        cb(null, `${req.body.csrYear}${path.extname(file.originalname)}`);
         break;
       default:
         cb(null, `${req.body.fileName}${path.extname(file.originalname)}`);

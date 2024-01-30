@@ -12,7 +12,7 @@ const CSRRouter = express.Router();
 
 CSRRouter.route("/")
   .get(GETCSR)
-  .post(UPLOAD.fields([{ name: "crsImg", maxCount: 1 }]), CREATECSR)
+  .post(UPLOAD.fields([{ name: "csrImg", maxCount: 1 }]), CREATECSR)
   .put(UPDATECSR)
   .delete(DELETECSR);
 
