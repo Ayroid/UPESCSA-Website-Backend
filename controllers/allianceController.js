@@ -27,7 +27,6 @@ import {
 
 const createAlliance = async (req, res) => {
   try {
-    console.log(req.files);
     const { allianceName, allianceWebsiteURL } = req.body;
     const query = { allianceName };
 

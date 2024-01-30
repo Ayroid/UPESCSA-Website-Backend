@@ -73,10 +73,29 @@ const ALLIANCE_MESSAGES = {
   ERROR_DELETING_ALLIANCE: "Error Deleting Alliance ❌ ",
 };
 
+const COMMITTEE_MESSAGES = {
+  COMMITTEE_ALREADY_EXISTS: "Committee Already Exists ❌ ",
+  COMMITTEE_CREATED: "Committee Created ✅ ",
+  COMMITTEE_NOT_CREATED: "Committee Not Created ❌ ",
+  COMMITTEE_FOUND: "Committee Found ✅ ",
+  COMMITTEE_NOT_FOUND: "Committee Not Found ❌ ",
+  COMMITTEE_READ: "Committee Read ✅ ",
+  COMMITTEE_NOT_READ: "Committee Not Read ❌ ",
+  COMMITTEE_UPDATED: "Committee Updated ✅ ",
+  COMMITTEE_NOT_UPDATED: "Committee Not Updated ❌ ",
+  COMMITTEE_DELETED: "Committee Deleted ✅ ",
+  COMMITTEE_NOT_DELETED: "Committee Not Deleted ❌ ",
+  ERROR_CREATING_COMMITTEE: "Error Creating Committee ❌ ",
+  ERROR_READING_COMMITTEE: "Error Reading Committee ❌ ",
+  ERROR_UPDATING_COMMITTEE: "Error Updating Committee ❌ ",
+  ERROR_DELETING_COMMITTEE: "Error Deleting Committee ❌ ",
+};
+
 export {
   DB_MESSAGES,
   SERVER_MESSAGES,
   USER_MESSAGES,
   BLOG_MESSAGES,
   ALLIANCE_MESSAGES,
+  COMMITTEE_MESSAGES,
 };
