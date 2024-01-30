@@ -91,22 +91,22 @@ const EVENT_MESSAGES = {
   ERROR_DELETING_EVENT: "Error Deleting Event ❌ ",
 };
 
-const CRS_MESSAGES = {
-  CRS_ALREADY_EXISTS: "CRS Already Exists ❌ ",
-  CRS_CREATED: "CRS Created ✅ ",
-  CRS_NOT_CREATED: "CRS Not Created ❌ ",
-  CRS_FOUND: "CRS Found ✅ ",
-  CRS_NOT_FOUND: "CRS Not Found ❌ ",
-  CRS_READ: "CRS Read ✅ ",
-  CRS_NOT_READ: "CRS Not Read ❌ ",
-  CRS_UPDATED: "CRS Updated ✅ ",
-  CRS_NOT_UPDATED: "CRS Not Updated ❌ ",
-  CRS_DELETED: "CRS Deleted ✅ ",
-  CRS_NOT_DELETED: "CRS Not Deleted ❌ ",
-  ERROR_CREATING_CRS: "Error Creating CRS ❌ ",
-  ERROR_READING_CRS: "Error Reading CRS ❌ ",
-  ERROR_UPDATING_CRS: "Error Updating CRS ❌ ",
-  ERROR_DELETING_CRS: "Error Deleting CRS ❌ ",
+const CSR_MESSAGES = {
+  CSR_ALREADY_EXISTS: "CSR Already Exists ❌ ",
+  CSR_CREATED: "CSR Created ✅ ",
+  CSR_NOT_CREATED: "CSR Not Created ❌ ",
+  CSR_FOUND: "CSR Found ✅ ",
+  CSR_NOT_FOUND: "CSR Not Found ❌ ",
+  CSR_READ: "CSR Read ✅ ",
+  CSR_NOT_READ: "CSR Not Read ❌ ",
+  CSR_UPDATED: "CSR Updated ✅ ",
+  CSR_NOT_UPDATED: "CSR Not Updated ❌ ",
+  CSR_DELETED: "CSR Deleted ✅ ",
+  CSR_NOT_DELETED: "CSR Not Deleted ❌ ",
+  ERROR_CREATING_CSR: "Error Creating CSR ❌ ",
+  ERROR_READING_CSR: "Error Reading CSR ❌ ",
+  ERROR_UPDATING_CSR: "Error Updating CSR ❌ ",
+  ERROR_DELETING_CSR: "Error Deleting CSR ❌ ",
 };
 
 export {
@@ -116,5 +116,5 @@ export {
   BLOG_MESSAGES,
   ALLIANCE_MESSAGES,
   EVENT_MESSAGES,
-  CRS_MESSAGES,
+  CSR_MESSAGES,
 };
