@@ -12,6 +12,9 @@ const storage = multer.diskStorage({
       case "allianceImg":
         cb(null, "public/images/alliance");
         break;
+      case "eventImg":
+        cb(null, "public/images/event");
+        break;
       default:
         cb(null, "public/images/others");
         break;
@@ -24,6 +27,9 @@ const storage = multer.diskStorage({
         break;
       case "allianceImg":
         cb(null, `${req.body.allianceName}${path.extname(file.originalname)}`);
+        break;
+      case "eventImg":
+        cb(null, `${req.body.eventName}${path.extname(file.originalname)}`);
         break;
       default:
         cb(null, `${req.body.fileName}${path.extname(file.originalname)}`);
