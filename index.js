@@ -7,6 +7,7 @@ import { Database } from "./config/database.js";
 // ROUTERS
 import { ALLIANCEROUTER } from "./routers/allianceRouter.js";
 import { BLOGROUTER } from "./routers/blogRouter.js";
+import { COMMITTEEROUTER } from "./routers/committeeRouter.js";
 
 // CONFIG
 dotenv.config();
@@ -35,7 +36,8 @@ app.use("/api/test", (req, res) => {
 
 //ROUTES
 app.use("/api/alliance", ALLIANCEROUTER);
-app.use("/api/blogs", BLOGROUTER);
+app.use("/api/blog", BLOGROUTER);
+app.use("/api/committee", COMMITTEEROUTER);
 
 // DATABASE DISCONNECTION
 process.on("SIGINT", () => {

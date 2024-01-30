@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import moment from "moment-timezone";
 
-const coreMemberSchema = new mongoose.Schema({
+const committeeSchema = new mongoose.Schema({
   committeeName: {
     type: String,
     required: true,
@@ -11,6 +11,10 @@ const coreMemberSchema = new mongoose.Schema({
     required: true,
   },
   committeeImageURL: {
+    type: String,
+    required: false,
+  },
+  committeePageURL: {
     type: String,
     required: false,
   },
@@ -36,6 +40,6 @@ const coreMemberSchema = new mongoose.Schema({
   },
 });
 
-const coreMemberModel = mongoose.model("committee", coreMemberSchema);
+const committeeModel = mongoose.model("committee", committeeSchema);
 
-export { coreMemberModel as COREMEMBERMODEL };
+export { committeeModel as COMMITTEEMODEL };
