@@ -86,8 +86,25 @@ const deleteEvent = async (req, res) => {
       }};
 
 const updateEvent = async (req, res) => {
-  res.send("Update Event");
-};
+    try {
+        const query = { _id: req.query.id };
+        const data = req.body;
+        const message = await UPDATEEVENTDB(query, data, fields);
+        if (message) {
+          console.log(EVENT_MESSAGES.EVENT_UPDATED, { message });
+          return res.status(StatusCodes.OK).send(message);
+        } else {
+          console.log(EVENT_MESSAGES.EVENT_NOT_UPDATED, { message });
+          return res
+            .status(StatusCodes.NOT_FOUND)
+            .send(EVENT_MESSAGES.EVENT_NOT_UPDATED);
+        }
+      } catch (error) {
+        console.log(EVENT_MESSAGES.ERROR_UPDATING_EVENT, { error });
+        return res
+          .status(StatusCodes.INTERNAL_SERVER_ERROR)
+          .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+      }};
 
 const getEvent = async (req, res) => {
     try {
