@@ -83,7 +83,25 @@ const deleteCSR = async (req, res) => {
 };
 
 const updateCSR = async (req, res) => {
-  res.send("updateCRS");
+  try {
+    const query = { _id: req.query.id };
+    const data = req.body;
+    const message = await UPDATECSRDB(query, data, fields);
+    if (message) {
+      console.log(CSR_MESSAGES.CSR_UPDATED, { message });
+      return res.status(StatusCodes.OK).send(message);
+    } else {
+      console.log(CSR_MESSAGES.CSR_NOT_UPDATED, { message });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(CSR_MESSAGES.CSR_NOT_UPDATED);
+    }
+  } catch (error) {
+    console.log(CSR_MESSAGES.ERROR_UPDATING_CSR, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
 };
 
 const getCSR = async (req, res) => {
