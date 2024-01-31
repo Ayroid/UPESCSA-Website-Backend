@@ -33,7 +33,6 @@ import {
 const createCoreMember = async (req, res) => {
   try {
     const { name, csaid, committee, linkedInURL } = req.body;
-    console.log(req.body.csaid);
     const query = { csaid };
 
     const memberExists = await READCOREMEMBERDB(query, fields);

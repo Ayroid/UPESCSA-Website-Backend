@@ -12,7 +12,7 @@ const EventRouter = express.Router();
 
 EventRouter.route("/")
   .get(READEVENT)
-  .post(UPLOAD.fields([{ name: "eventImg", maxCount: 5 }]), CREATEEVENT)
+  .post(UPLOAD.fields([{ name: "eventImg", maxCount: 1 }]), CREATEEVENT)
   .put(UPDATEEVENT)
   .delete(DELETEEVENT);
 

@@ -145,6 +145,24 @@ const EVENT_MESSAGES = {
   ERROR_DELETING_EVENT: "Error Deleting Event ❌ ",
 };
 
+const HEADS_MESSAGES = {
+  HEADS_ALREADY_EXISTS: "Heads Already Exists ❌ ",
+  HEADS_CREATED: "Heads Created ✅ ",
+  HEADS_NOT_CREATED: "Heads Not Created ❌ ",
+  HEADS_FOUND: "Heads Found ✅ ",
+  HEADS_NOT_FOUND: "Heads Not Found ❌ ",
+  HEADS_READ: "Heads Read ✅ ",
+  HEADS_NOT_READ: "Heads Not Read ❌ ",
+  HEADS_UPDATED: "Heads Updated ✅ ",
+  HEADS_NOT_UPDATED: "Heads Not Updated ❌ ",
+  HEADS_DELETED: "Heads Deleted ✅ ",
+  HEADS_NOT_DELETED: "Heads Not Deleted ❌ ",
+  ERROR_CREATING_HEADS: "Error Creating Heads ❌ ",
+  ERROR_READING_HEADS: "Error Reading Heads ❌ ",
+  ERROR_UPDATING_HEADS: "Error Updating Heads ❌ ",
+  ERROR_DELETING_HEADS: "Error Deleting Heads ❌ ",
+};
+
 export {
   DB_MESSAGES,
   SERVER_MESSAGES,
@@ -155,4 +173,5 @@ export {
   CSR_MESSAGES,
   COMMITTEE_MESSAGES,
   COREMEMBER_MESSAGES,
+  HEADS_MESSAGES,
 };

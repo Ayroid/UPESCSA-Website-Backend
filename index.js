@@ -11,6 +11,7 @@ import { EVENTROUTER } from "./routers/eventRouter.js";
 import { CSRROUTER } from "./routers/csrRouter.js";
 import { COMMITTEEROUTER } from "./routers/committeeRouter.js";
 import { COREMEMBERROUTER } from "./routers/coreMemberRouter.js";
+import { HEADSROUTER } from "./routers/headsRouter.js";
 
 // CONFIG
 dotenv.config();
@@ -44,6 +45,7 @@ app.use("/api/event", EVENTROUTER);
 app.use("/api/csr", CSRROUTER);
 app.use("/api/committee", COMMITTEEROUTER);
 app.use("/api/coremember", COREMEMBERROUTER);
+app.use("/api/head", HEADSROUTER);
 
 // DATABASE DISCONNECTION
 process.on("SIGINT", () => {
