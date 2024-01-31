@@ -57,9 +57,9 @@ const createHeads = async (req, res) => {
       csaid,
       position,
       category,
-      committee: committeeExists[0]._id,
       headImgURL,
       linkedInURL,
+      committee: committeeExists[0]._id,
     });
 
     if (head) {
