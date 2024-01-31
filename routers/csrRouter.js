@@ -6,7 +6,7 @@ import {
   UPDATECSR,
   GETCSR,
   DELETECSR,
-} from "../controllers/CSRController.js";
+} from "../controllers/csrController.js";
 
 const CSRRouter = express.Router();
 

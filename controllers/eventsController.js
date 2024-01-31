@@ -25,7 +25,6 @@ const createEvent = async (req, res) => {
     const { eventName, eventYear } = req.body;
     const query = { eventName };
 
-    // Check if the event already exists
     const eventExists = await READEVENTDB(query, fields);
     if (eventExists.length > 0) {
       return res
@@ -35,8 +34,6 @@ const createEvent = async (req, res) => {
 
     const eventImageURL = `${SERVER_URI}/images/events/${req.files["eventImg"][0].filename}`;
 
-
-    // Create the event
     const event = await CREATEEVENTDB({
       eventName,
       eventImageURL,
@@ -63,49 +60,6 @@ const createEvent = async (req, res) => {
   }
 };
 
-const deleteEvent = async (req, res) => {
-  try {
-    const query = { _id: req.query.id };
-    const message = await DELETEEVENTDB(query);
-    if (message) {
-      console.log(EVENT_MESSAGES.EVENT_DELETED, { message });
-      return res.status(StatusCodes.OK).send(EVENT_MESSAGES.EVENT_DELETED);
-    } else {
-      console.log(EVENT_MESSAGES.EVENT_NOT_DELETED, { message });
-      return res
-        .status(StatusCodes.NOT_FOUND)
-        .send(EVENT_MESSAGES.EVENT_NOT_DELETED);
-    }
-  } catch (error) {
-    console.log(EVENT_MESSAGES.ERROR_DELETING_EVENT, { error });
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
-  }
-};
-
-const updateEvent = async (req, res) => {
-  try {
-    const query = { _id: req.query.id };
-    const data = req.body;
-    const message = await UPDATEEVENTDB(query, data, fields);
-    if (message) {
-      console.log(EVENT_MESSAGES.EVENT_UPDATED, { message });
-      return res.status(StatusCodes.OK).send(message);
-    } else {
-      console.log(EVENT_MESSAGES.EVENT_NOT_UPDATED, { message });
-      return res
-        .status(StatusCodes.NOT_FOUND)
-        .send(EVENT_MESSAGES.EVENT_NOT_UPDATED);
-    }
-  } catch (error) {
-    console.log(EVENT_MESSAGES.ERROR_UPDATING_EVENT, { error });
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
-  }
-};
-
 const getEvent = async (req, res) => {
   try {
     const query = !req.query._id ? {} : { _id: req.query.id };
@@ -123,6 +77,49 @@ const getEvent = async (req, res) => {
     }
   } catch (error) {
     console.log(EVENT_MESSAGES.ERROR_READING_EVENT, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
+};
+
+const updateEvent = async (req, res) => {
+  try {
+    const query = { _id: req.query.id };
+    const data = req.body;
+    const updated = await UPDATEEVENTDB(query, data, fields);
+    if (updated) {
+      console.log(EVENT_MESSAGES.EVENT_UPDATED, { updated });
+      return res.status(StatusCodes.OK).send(updated);
+    } else {
+      console.log(EVENT_MESSAGES.EVENT_NOT_UPDATED, { updated });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(EVENT_MESSAGES.EVENT_NOT_UPDATED);
+    }
+  } catch (error) {
+    console.log(EVENT_MESSAGES.ERROR_UPDATING_EVENT, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
+};
+
+const deleteEvent = async (req, res) => {
+  try {
+    const query = { _id: req.query.id };
+    const deleted = await DELETEEVENTDB(query);
+    if (deleted) {
+      console.log(EVENT_MESSAGES.EVENT_DELETED, { deleted });
+      return res.status(StatusCodes.OK).send(EVENT_MESSAGES.EVENT_DELETED);
+    } else {
+      console.log(EVENT_MESSAGES.EVENT_NOT_DELETED, { deleted });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(EVENT_MESSAGES.EVENT_NOT_DELETED);
+    }
+  } catch (error) {
+    console.log(EVENT_MESSAGES.ERROR_DELETING_EVENT, { error });
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
