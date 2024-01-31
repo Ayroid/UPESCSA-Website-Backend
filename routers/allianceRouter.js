@@ -6,7 +6,7 @@ import {
   UPDATEALLIANCE,
   READALLIANCE,
   DELETEALLIANCE,
-} from "../controllers/AllianceController.js";
+} from "../controllers/allianceController.js";
 
 const AllianceRouter = express.Router();
 
