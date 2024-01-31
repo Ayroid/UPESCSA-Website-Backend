@@ -18,16 +18,16 @@ const committeeSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  committeeHeads: {
+  committeeHeads: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "headsandmanagement",
     required: false,
-  },
-  committeeMembers: {
+  }],
+  committeeMembers: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "coremember",
     required: false,
-  },
+  }],
   created_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),

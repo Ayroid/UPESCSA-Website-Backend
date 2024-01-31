@@ -63,7 +63,7 @@ const createCoreMember = async (req, res) => {
 
       const committee = await UPDATECOMMITTEEDB(
         { _id: committeeExists[0]._id },
-        { $push: { members: member._id } },
+        { $push: { committeeMembers: member._id } },
         fields
       );
 
