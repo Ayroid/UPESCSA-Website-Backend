@@ -25,7 +25,9 @@ import {
 const createCSR = async (req, res) => {
   try {
     const { csrYear } = req.body;
-    const query = { csrYear };
+    const csrImageURL = `${SERVER_URI}/images/csr/${req.files["csrImg"][0].filename}`;
+
+    const query = { csrImageURL };
 
     const csrExists = await READCSRDB(query, fields);
     if (csrExists.length > 0) {
@@ -33,8 +35,6 @@ const createCSR = async (req, res) => {
         .status(StatusCodes.CONFLICT)
         .send(CSR_MESSAGES.CSR_ALREADY_EXISTS);
     }
-
-    const csrImageURL = `${SERVER_URI}/images/csr/${req.files["csrImg"][0].filename}`;
 
     const csr = await CREATECSRDB({
       csrYear,
@@ -61,21 +61,21 @@ const createCSR = async (req, res) => {
   }
 };
 
-const deleteCSR = async (req, res) => {
+const getCSR = async (req, res) => {
   try {
-    const query = { _id: req.query.id };
-    const message = await DELETECSRDB(query);
-    if (message) {
-      console.log(CSR_MESSAGES.CSR_DELETED, { message });
-      return res.status(StatusCodes.OK).send(CSR_MESSAGES.CSR_DELETED);
+    const query = !req.query._id ? {} : { _id: req.query.id };
+    const csr = await READCSRDB(query, fields);
+
+    if (csr.length > 0) {
+      console.log(CSR_MESSAGES.CSR_FOUND, { csr });
+
+      return res.status(StatusCodes.OK).send(csr);
     } else {
-      console.log(CSR_MESSAGES.CSR_NOT_DELETED, { message });
-      return res
-        .status(StatusCodes.NOT_FOUND)
-        .send(CSR_MESSAGES.CSR_NOT_DELETED);
+      console.log(CSR_MESSAGES.CSR_NOT_FOUND, { csr });
+      return res.status(StatusCodes.NOT_FOUND).send(CSR_MESSAGES.CSR_NOT_FOUND);
     }
   } catch (error) {
-    console.log(CSR_MESSAGES.ERROR_DELETING_CSR, { error });
+    console.log(CSR_MESSAGES.ERROR_READING_CSR, { error });
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
@@ -86,12 +86,12 @@ const updateCSR = async (req, res) => {
   try {
     const query = { _id: req.query.id };
     const data = req.body;
-    const message = await UPDATECSRDB(query, data, fields);
-    if (message) {
-      console.log(CSR_MESSAGES.CSR_UPDATED, { message });
-      return res.status(StatusCodes.OK).send(message);
+    const updated = await UPDATECSRDB(query, data, fields);
+    if (updated) {
+      console.log(CSR_MESSAGES.CSR_UPDATED, { updated });
+      return res.status(StatusCodes.OK).send(updated);
     } else {
-      console.log(CSR_MESSAGES.CSR_NOT_UPDATED, { message });
+      console.log(CSR_MESSAGES.CSR_NOT_UPDATED, { updated });
       return res
         .status(StatusCodes.NOT_FOUND)
         .send(CSR_MESSAGES.CSR_NOT_UPDATED);
@@ -104,23 +104,21 @@ const updateCSR = async (req, res) => {
   }
 };
 
-const getCSR = async (req, res) => {
+const deleteCSR = async (req, res) => {
   try {
-    const query = !req.query._id ? {} : { _id: req.query.id };
-    const csr = await READCSRDB(query, fields);
-
-    if (csr.length > 0) {
-      console.log(CSR_MESSAGES.CSR_FOUND, { csr});
-
-      return res.status(StatusCodes.OK).send(csr);
+    const query = { _id: req.query.id };
+    const deleted = await DELETECSRDB(query);
+    if (deleted) {
+      console.log(CSR_MESSAGES.CSR_DELETED, { deleted });
+      return res.status(StatusCodes.OK).send(CSR_MESSAGES.CSR_DELETED);
     } else {
-      console.log(CSR_MESSAGES.CSR_NOT_FOUND, { csr });
+      console.log(CSR_MESSAGES.CSR_NOT_DELETED, { deleted });
       return res
         .status(StatusCodes.NOT_FOUND)
-        .send(CSR_MESSAGES.CSR_NOT_FOUND);
+        .send(CSR_MESSAGES.CSR_NOT_DELETED);
     }
   } catch (error) {
-    console.log(CSR_MESSAGES.ERROR_READING_CSR, { error });
+    console.log(CSR_MESSAGES.ERROR_DELETING_CSR, { error });
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
