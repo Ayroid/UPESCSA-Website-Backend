@@ -73,6 +73,42 @@ const ALLIANCE_MESSAGES = {
   ERROR_DELETING_ALLIANCE: "Error Deleting Alliance ❌ ",
 };
 
+const EVENT_MESSAGES = {
+  EVENT_ALREADY_EXISTS: "Event Already Exists ❌ ",
+  EVENT_CREATED: "Event Created ✅ ",
+  EVENT_NOT_CREATED: "Event Not Created ❌ ",
+  EVENT_FOUND: "Event Found ✅ ",
+  EVENT_NOT_FOUND: "Event Not Found ❌ ",
+  EVENT_READ: "Event Read ✅ ",
+  EVENT_NOT_READ: "Event Not Read ❌ ",
+  EVENT_UPDATED: "Event Updated ✅ ",
+  EVENT_NOT_UPDATED: "Event Not Updated ❌ ",
+  EVENT_DELETED: "Event Deleted ✅ ",
+  EVENT_NOT_DELETED: "Event Not Deleted ❌ ",
+  ERROR_CREATING_EVENT: "Error Creating Event ❌ ",
+  ERROR_READING_EVENT: "Error Reading Event ❌ ",
+  ERROR_UPDATING_EVENT: "Error Updating Event ❌ ",
+  ERROR_DELETING_EVENT: "Error Deleting Event ❌ ",
+};
+
+const CSR_MESSAGES = {
+  CSR_ALREADY_EXISTS: "CSR Already Exists ❌ ",
+  CSR_CREATED: "CSR Created ✅ ",
+  CSR_NOT_CREATED: "CSR Not Created ❌ ",
+  CSR_FOUND: "CSR Found ✅ ",
+  CSR_NOT_FOUND: "CSR Not Found ❌ ",
+  CSR_READ: "CSR Read ✅ ",
+  CSR_NOT_READ: "CSR Not Read ❌ ",
+  CSR_UPDATED: "CSR Updated ✅ ",
+  CSR_NOT_UPDATED: "CSR Not Updated ❌ ",
+  CSR_DELETED: "CSR Deleted ✅ ",
+  CSR_NOT_DELETED: "CSR Not Deleted ❌ ",
+  ERROR_CREATING_CSR: "Error Creating CSR ❌ ",
+  ERROR_READING_CSR: "Error Reading CSR ❌ ",
+  ERROR_UPDATING_CSR: "Error Updating CSR ❌ ",
+  ERROR_DELETING_CSR: "Error Deleting CSR ❌ ",
+};
+
 const COMMITTEE_MESSAGES = {
   COMMITTEE_ALREADY_EXISTS: "Committee Already Exists ❌ ",
   COMMITTEE_CREATED: "Committee Created ✅ ",
@@ -97,5 +133,7 @@ export {
   USER_MESSAGES,
   BLOG_MESSAGES,
   ALLIANCE_MESSAGES,
+  EVENT_MESSAGES,
+  CSR_MESSAGES,
   COMMITTEE_MESSAGES,
 };

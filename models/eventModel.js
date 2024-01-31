@@ -7,7 +7,7 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   eventImageURL: {
-    type: [String],
+    type: String,
     required: true,
   },
   eventYear: {
