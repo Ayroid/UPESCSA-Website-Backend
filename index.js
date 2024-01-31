@@ -40,7 +40,7 @@ app.use("/api/test", (req, res) => {
 //ROUTES
 app.use("/api/alliance", ALLIANCEROUTER);
 app.use("/api/blog", BLOGROUTER);
-app.use("/api/events", EVENTROUTER);
+app.use("/api/event", EVENTROUTER);
 app.use("/api/csr", CSRROUTER);
 app.use("/api/committee", COMMITTEEROUTER);
 app.use("/api/coremember", COREMEMBERROUTER);
