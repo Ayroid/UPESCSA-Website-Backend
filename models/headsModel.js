@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import moment from "moment-timezone";
 
-const headsAndManagementSchema = new mongoose.Schema({
+const headsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -27,6 +27,10 @@ const headsAndManagementSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  headImgURL: {
+    type: String,
+    required: true,
+  },
   created_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
@@ -39,9 +43,6 @@ const headsAndManagementSchema = new mongoose.Schema({
   },
 });
 
-const headsAndManagamentModel = mongoose.model(
-  "headsandmanagement",
-  headsAndManagementSchema
-);
+const headsModel = mongoose.model("heads", headsSchema);
 
-export { headsAndManagamentModel as HEADSANDMANAGEMENTMODEL };
+export { headsModel as HEADSMODEL };

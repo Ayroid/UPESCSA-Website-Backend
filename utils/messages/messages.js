@@ -73,22 +73,40 @@ const ALLIANCE_MESSAGES = {
   ERROR_DELETING_ALLIANCE: "Error Deleting Alliance ❌ ",
 };
 
-const EVENT_MESSAGES = {
-  EVENT_ALREADY_EXISTS: "Event Already Exists ❌ ",
-  EVENT_CREATED: "Event Created ✅ ",
-  EVENT_NOT_CREATED: "Event Not Created ❌ ",
-  EVENT_FOUND: "Event Found ✅ ",
-  EVENT_NOT_FOUND: "Event Not Found ❌ ",
-  EVENT_READ: "Event Read ✅ ",
-  EVENT_NOT_READ: "Event Not Read ❌ ",
-  EVENT_UPDATED: "Event Updated ✅ ",
-  EVENT_NOT_UPDATED: "Event Not Updated ❌ ",
-  EVENT_DELETED: "Event Deleted ✅ ",
-  EVENT_NOT_DELETED: "Event Not Deleted ❌ ",
-  ERROR_CREATING_EVENT: "Error Creating Event ❌ ",
-  ERROR_READING_EVENT: "Error Reading Event ❌ ",
-  ERROR_UPDATING_EVENT: "Error Updating Event ❌ ",
-  ERROR_DELETING_EVENT: "Error Deleting Event ❌ ",
+const COMMITTEE_MESSAGES = {
+  COMMITTEE_ALREADY_EXISTS: "Committee Already Exists ❌ ",
+  COMMITTEE_CREATED: "Committee Created ✅ ",
+  COMMITTEE_NOT_CREATED: "Committee Not Created ❌ ",
+  COMMITTEE_FOUND: "Committee Found ✅ ",
+  COMMITTEE_NOT_FOUND: "Committee Not Found ❌ ",
+  COMMITTEE_READ: "Committee Read ✅ ",
+  COMMITTEE_NOT_READ: "Committee Not Read ❌ ",
+  COMMITTEE_UPDATED: "Committee Updated ✅ ",
+  COMMITTEE_NOT_UPDATED: "Committee Not Updated ❌ ",
+  COMMITTEE_DELETED: "Committee Deleted ✅ ",
+  COMMITTEE_NOT_DELETED: "Committee Not Deleted ❌ ",
+  ERROR_CREATING_COMMITTEE: "Error Creating Committee ❌ ",
+  ERROR_READING_COMMITTEE: "Error Reading Committee ❌ ",
+  ERROR_UPDATING_COMMITTEE: "Error Updating Committee ❌ ",
+  ERROR_DELETING_COMMITTEE: "Error Deleting Committee ❌ ",
+};
+
+const COREMEMBER_MESSAGES = {
+  COREMEMBER_ALREADY_EXISTS: "CoreMember Already Exists ❌ ",
+  COREMEMBER_CREATED: "CoreMember Created ✅ ",
+  COREMEMBER_NOT_CREATED: "CoreMember Not Created ❌ ",
+  COREMEMBER_FOUND: "CoreMember Found ✅ ",
+  COREMEMBER_NOT_FOUND: "CoreMember Not Found ❌ ",
+  COREMEMBER_READ: "CoreMember Read ✅ ",
+  COREMEMBER_NOT_READ: "CoreMember Not Read ❌ ",
+  COREMEMBER_UPDATED: "CoreMember Updated ✅ ",
+  COREMEMBER_NOT_UPDATED: "CoreMember Not Updated ❌ ",
+  COREMEMBER_DELETED: "CoreMember Deleted ✅ ",
+  COREMEMBER_NOT_DELETED: "CoreMember Not Deleted ❌ ",
+  ERROR_CREATING_COREMEMBER: "Error Creating CoreMember ❌ ",
+  ERROR_READING_COREMEMBER: "Error Reading CoreMember ❌ ",
+  ERROR_UPDATING_COREMEMBER: "Error Updating CoreMember ❌ ",
+  ERROR_DELETING_COREMEMBER: "Error Deleting CoreMember ❌ ",
 };
 
 const CSR_MESSAGES = {
@@ -109,22 +127,40 @@ const CSR_MESSAGES = {
   ERROR_DELETING_CSR: "Error Deleting CSR ❌ ",
 };
 
-const COMMITTEE_MESSAGES = {
-  COMMITTEE_ALREADY_EXISTS: "Committee Already Exists ❌ ",
-  COMMITTEE_CREATED: "Committee Created ✅ ",
-  COMMITTEE_NOT_CREATED: "Committee Not Created ❌ ",
-  COMMITTEE_FOUND: "Committee Found ✅ ",
-  COMMITTEE_NOT_FOUND: "Committee Not Found ❌ ",
-  COMMITTEE_READ: "Committee Read ✅ ",
-  COMMITTEE_NOT_READ: "Committee Not Read ❌ ",
-  COMMITTEE_UPDATED: "Committee Updated ✅ ",
-  COMMITTEE_NOT_UPDATED: "Committee Not Updated ❌ ",
-  COMMITTEE_DELETED: "Committee Deleted ✅ ",
-  COMMITTEE_NOT_DELETED: "Committee Not Deleted ❌ ",
-  ERROR_CREATING_COMMITTEE: "Error Creating Committee ❌ ",
-  ERROR_READING_COMMITTEE: "Error Reading Committee ❌ ",
-  ERROR_UPDATING_COMMITTEE: "Error Updating Committee ❌ ",
-  ERROR_DELETING_COMMITTEE: "Error Deleting Committee ❌ ",
+const EVENT_MESSAGES = {
+  EVENT_ALREADY_EXISTS: "Event Already Exists ❌ ",
+  EVENT_CREATED: "Event Created ✅ ",
+  EVENT_NOT_CREATED: "Event Not Created ❌ ",
+  EVENT_FOUND: "Event Found ✅ ",
+  EVENT_NOT_FOUND: "Event Not Found ❌ ",
+  EVENT_READ: "Event Read ✅ ",
+  EVENT_NOT_READ: "Event Not Read ❌ ",
+  EVENT_UPDATED: "Event Updated ✅ ",
+  EVENT_NOT_UPDATED: "Event Not Updated ❌ ",
+  EVENT_DELETED: "Event Deleted ✅ ",
+  EVENT_NOT_DELETED: "Event Not Deleted ❌ ",
+  ERROR_CREATING_EVENT: "Error Creating Event ❌ ",
+  ERROR_READING_EVENT: "Error Reading Event ❌ ",
+  ERROR_UPDATING_EVENT: "Error Updating Event ❌ ",
+  ERROR_DELETING_EVENT: "Error Deleting Event ❌ ",
+};
+
+const HEADS_MESSAGES = {
+  HEADS_ALREADY_EXISTS: "Heads Already Exists ❌ ",
+  HEADS_CREATED: "Heads Created ✅ ",
+  HEADS_NOT_CREATED: "Heads Not Created ❌ ",
+  HEADS_FOUND: "Heads Found ✅ ",
+  HEADS_NOT_FOUND: "Heads Not Found ❌ ",
+  HEADS_READ: "Heads Read ✅ ",
+  HEADS_NOT_READ: "Heads Not Read ❌ ",
+  HEADS_UPDATED: "Heads Updated ✅ ",
+  HEADS_NOT_UPDATED: "Heads Not Updated ❌ ",
+  HEADS_DELETED: "Heads Deleted ✅ ",
+  HEADS_NOT_DELETED: "Heads Not Deleted ❌ ",
+  ERROR_CREATING_HEADS: "Error Creating Heads ❌ ",
+  ERROR_READING_HEADS: "Error Reading Heads ❌ ",
+  ERROR_UPDATING_HEADS: "Error Updating Heads ❌ ",
+  ERROR_DELETING_HEADS: "Error Deleting Heads ❌ ",
 };
 
 export {
@@ -136,4 +172,6 @@ export {
   EVENT_MESSAGES,
   CSR_MESSAGES,
   COMMITTEE_MESSAGES,
+  COREMEMBER_MESSAGES,
+  HEADS_MESSAGES,
 };

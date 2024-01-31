@@ -10,11 +10,11 @@ const coreMemberSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  committee: {
+  committee: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "committee",
     required: false,
-  },
+  }],
   linkedInURL: {
     type: String,
     required: false,

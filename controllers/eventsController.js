@@ -60,7 +60,7 @@ const createEvent = async (req, res) => {
   }
 };
 
-const getEvent = async (req, res) => {
+const readEvent = async (req, res) => {
   try {
     const query = !req.query._id ? {} : { _id: req.query.id };
     const event = await READEVENTDB(query, fields);
@@ -128,7 +128,7 @@ const deleteEvent = async (req, res) => {
 
 export {
   createEvent as CREATEEVENT,
-  getEvent as GETEVENT,
+  readEvent as READEVENT,
   updateEvent as UPDATEEVENT,
   deleteEvent as DELETEEVENT,
 };

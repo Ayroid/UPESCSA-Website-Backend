@@ -21,6 +21,9 @@ const storage = multer.diskStorage({
       case "committeeImg":
         cb(null, "public/images/committee");
         break;
+      case "headImg":
+        cb(null, "public/images/heads");
+        break;
       default:
         cb(null, "public/images/others");
         break;
@@ -42,6 +45,9 @@ const storage = multer.diskStorage({
         break;
       case "committeeImg":
         cb(null, `${req.body.committeeName}${path.extname(file.originalname)}`);
+        break;
+      case "headImg":
+        cb(null, `${req.body.csaid}${path.extname(file.originalname)}`);
         break;
       default:
         cb(null, `${req.body.fileName}${path.extname(file.originalname)}`);

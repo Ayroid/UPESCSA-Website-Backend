@@ -61,7 +61,7 @@ const createCSR = async (req, res) => {
   }
 };
 
-const getCSR = async (req, res) => {
+const readCSR = async (req, res) => {
   try {
     const query = !req.query._id ? {} : { _id: req.query.id };
     const csr = await READCSRDB(query, fields);
@@ -127,7 +127,7 @@ const deleteCSR = async (req, res) => {
 
 export {
   createCSR as CREATECSR,
-  getCSR as GETCSR,
+  readCSR as READCSR,
   updateCSR as UPDATECSR,
   deleteCSR as DELETECSR,
 };

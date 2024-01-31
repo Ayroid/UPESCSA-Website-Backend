@@ -4,15 +4,15 @@ import { UPLOAD } from "../middlewares/multer.js";
 import {
   CREATEEVENT,
   UPDATEEVENT,
-  GETEVENT,
+  READEVENT,
   DELETEEVENT,
 } from "../controllers/eventsController.js";
 
 const EventRouter = express.Router();
 
 EventRouter.route("/")
-  .get(GETEVENT)
-  .post(UPLOAD.fields([{ name: "eventImg", maxCount: 5 }]), CREATEEVENT)
+  .get(READEVENT)
+  .post(UPLOAD.fields([{ name: "eventImg", maxCount: 1 }]), CREATEEVENT)
   .put(UPDATEEVENT)
   .delete(DELETEEVENT);
 
