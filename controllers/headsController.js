@@ -31,7 +31,7 @@ import {
 
 const createHeads = async (req, res) => {
   try {
-    const { name, csaid, position, category, committee, linkedInURL } =
+    const { name, csaid, position, order, category, committee, linkedInURL } =
       req.body;
     const query = { csaid };
 
@@ -56,6 +56,7 @@ const createHeads = async (req, res) => {
       name,
       csaid,
       position,
+      order,
       category,
       headImgURL,
       linkedInURL,

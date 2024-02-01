@@ -10,6 +10,10 @@ const headsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  order: {
+    type: Number,
+    required: true,
+  },
   position: {
     type: String,
     required: true,
