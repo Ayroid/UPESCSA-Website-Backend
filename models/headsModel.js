@@ -23,9 +23,9 @@ const headsSchema = new mongoose.Schema({
     required: true,
   },
   committee: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: "committee",
-    required: false,
+    required: true,
   },
   linkedInURL: {
     type: String,
