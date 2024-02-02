@@ -22,10 +22,11 @@ const headsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  committee: {
-    type: String,
-    required: true,
-  },
+  committee: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "committee",
+    required: false,
+  }],
   linkedInURL: {
     type: String,
     required: false,
