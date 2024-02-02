@@ -8,7 +8,7 @@ const headsSchema = new mongoose.Schema({
   },
   csaid: {
     type: String,
-    required: true,
+    required: false,
   },
   order: {
     type: Number,
@@ -22,11 +22,11 @@ const headsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  committee: {
-    type: String,
+  committee: [{
+    type: mongoose.Schema.Types.ObjectId,
     ref: "committee",
-    required: true,
-  },
+    required: false,
+  }],
   linkedInURL: {
     type: String,
     required: false,
