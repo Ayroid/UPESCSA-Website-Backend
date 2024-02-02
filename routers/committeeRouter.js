@@ -6,14 +6,17 @@ import {
   UPDATECOMMITTEE,
   READCOMMITTEE,
   DELETECOMMITTEE,
+  READALLCOMMITTEES,
 } from "../controllers/committeeController.js";
 
 const CommitteeRouter = express.Router();
 
 CommitteeRouter.route("/")
-  .get(READCOMMITTEE)
+  .get(READALLCOMMITTEES)
   .post(UPLOAD.fields([{ name: "committeeImg", maxCount: 1 }]), CREATECOMMITTEE)
   .put(UPDATECOMMITTEE)
   .delete(DELETECOMMITTEE);
+
+CommitteeRouter.route("/:id").get(READCOMMITTEE);
 
 export { CommitteeRouter as COMMITTEEROUTER };

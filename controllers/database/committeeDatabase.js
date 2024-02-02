@@ -19,9 +19,11 @@ const createCommitteeDB = async (data) => {
   }
 };
 
-const readCommitteeDB = async (query, fields) => {
+const readCommitteeDB = async (query, fields, populate) => {
   try {
-    const result = await COMMITTEEMODEL.find(query).select(fields);
+    const result = await COMMITTEEMODEL.find(query)
+      .select(fields)
+      .populate(populate);
     if (result.length > 0) {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_READ);
       return result;
