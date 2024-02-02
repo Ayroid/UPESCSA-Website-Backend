@@ -8,7 +8,7 @@ const headsSchema = new mongoose.Schema({
   },
   csaid: {
     type: String,
-    required: true,
+    required: false,
   },
   order: {
     type: Number,
