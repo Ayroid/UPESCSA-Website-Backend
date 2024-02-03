@@ -18,6 +18,7 @@ let fields = {
 
 import {
   CREATECOMMITTEEDB,
+  READALLCOMMITTEEDB,
   READCOMMITTEEDB,
   UPDATECOMMITTEEDB,
   DELETECOMMITTEEDB,
@@ -68,7 +69,6 @@ const createCommittee = async (req, res) => {
 
 const readAllCommittees = async (req, res) => {
   try {
-    console.log("Reading");
     const query = !req.query._id ? {} : { _id: req.query.id };
     fields = {
       __v: 0,
@@ -79,14 +79,14 @@ const readAllCommittees = async (req, res) => {
       createdAt: 0,
       updatedAt: 0,
     };
-    const committee = await READCOMMITTEEDB(query, fields);
+    const committees = await READALLCOMMITTEEDB(query, fields);
 
-    if (committee.length > 0) {
-      console.log(COMMITTEE_MESSAGES.COMMITTEE_FOUND, { committee });
+    if (committees.length > 0) {
+      console.log(COMMITTEE_MESSAGES.COMMITTEE_FOUND, { committees });
 
-      return res.status(StatusCodes.OK).send(committee);
+      return res.status(StatusCodes.OK).send(committees);
     } else {
-      console.log(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND, { committee });
+      console.log(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND, { committees });
       return res
         .status(StatusCodes.NOT_FOUND)
         .send(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND);
@@ -101,13 +101,13 @@ const readAllCommittees = async (req, res) => {
 
 const readCommittee = async (req, res) => {
   try {
-    const query = !req.query._id ? {} : { _id: req.query.id };
-    const populate = ["committeeHeads", "committeeMembers"];
-    const committee = await READCOMMITTEEDB(query, fields, populate);
+    const query = !req.query.committeeName
+      ? {}
+      : { committeeName: req.query.committeeName };
+    const committee = await READCOMMITTEEDB(query, fields);
 
     if (committee.length > 0) {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_FOUND, { committee });
-
       return res.status(StatusCodes.OK).send(committee);
     } else {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND, { committee });

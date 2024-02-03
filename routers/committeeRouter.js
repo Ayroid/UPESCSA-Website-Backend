@@ -17,6 +17,6 @@ CommitteeRouter.route("/")
   .put(UPDATECOMMITTEE)
   .delete(DELETECOMMITTEE);
 
-CommitteeRouter.route("/:id").get(READCOMMITTEE);
+CommitteeRouter.route("/name").get(READCOMMITTEE);
 
 export { CommitteeRouter as COMMITTEEROUTER };

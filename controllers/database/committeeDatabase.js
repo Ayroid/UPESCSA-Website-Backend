@@ -19,11 +19,37 @@ const createCommitteeDB = async (data) => {
   }
 };
 
-const readCommitteeDB = async (query, fields, populate) => {
+const readAllCommitteeDB = async (query, fields) => {
+  try {
+    const result = await COMMITTEEMODEL.find(query).select(fields);
+    if (result.length > 0) {
+      console.log(COMMITTEE_MESSAGES.COMMITTEE_READ);
+      return result;
+    } else {
+      console.log(COMMITTEE_MESSAGES.COMMITTEE_NOT_READ);
+      return false;
+    }
+  } catch (error) {
+    console.log(COMMITTEE_MESSAGES.ERROR_READING_COMMITTEE, {
+      query,
+      error,
+    });
+    return false;
+  }
+};
+
+const readCommitteeDB = async (query, fields) => {
   try {
     const result = await COMMITTEEMODEL.find(query)
       .select(fields)
-      .populate(populate);
+      .populate({
+        path: "committeeHeads",
+        select: "_id name position linkedInURL headImgURL",
+      })
+      .populate({
+        path: "committeeMembers",
+        select: "_id name",
+      });
     if (result.length > 0) {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_READ);
       return result;
@@ -84,6 +110,7 @@ const deleteCommitteeDB = async (query) => {
 
 export {
   createCommitteeDB as CREATECOMMITTEEDB,
+  readAllCommitteeDB as READALLCOMMITTEEDB,
   readCommitteeDB as READCOMMITTEEDB,
   updateCommitteeDB as UPDATECOMMITTEEDB,
   deleteCommitteeDB as DELETECOMMITTEEDB,
