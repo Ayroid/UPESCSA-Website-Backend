@@ -8,7 +8,7 @@ import {
 
 // CONSTANTS
 const SERVER_URI = process.env.SERVER_URI;
-const fields = {
+let fields = {
   __v: 0,
   createdAt: 0,
   updatedAt: 0,
@@ -18,6 +18,7 @@ const fields = {
 
 import {
   CREATECOMMITTEEDB,
+  READALLCOMMITTEEDB,
   READCOMMITTEEDB,
   UPDATECOMMITTEEDB,
   DELETECOMMITTEEDB,
@@ -66,14 +67,47 @@ const createCommittee = async (req, res) => {
   }
 };
 
-const readCommittee = async (req, res) => {
+const readAllCommittees = async (req, res) => {
   try {
     const query = !req.query._id ? {} : { _id: req.query.id };
+    fields = {
+      __v: 0,
+      _id: 1,
+      committeeDescription: 0,
+      committeeHeads: 0,
+      committeeMembers: 0,
+      createdAt: 0,
+      updatedAt: 0,
+    };
+    const committees = await READALLCOMMITTEEDB(query, fields);
+
+    if (committees.length > 0) {
+      console.log(COMMITTEE_MESSAGES.COMMITTEE_FOUND, { committees });
+
+      return res.status(StatusCodes.OK).send(committees);
+    } else {
+      console.log(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND, { committees });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .send(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND);
+    }
+  } catch (error) {
+    console.log(COMMITTEE_MESSAGES.ERROR_READING_COMMITTEE, { error });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send(SERVER_MESSAGES.INTERNAL_SERVER_ERROR);
+  }
+};
+
+const readCommittee = async (req, res) => {
+  try {
+    const query = !req.query.committeeName
+      ? {}
+      : { committeeName: req.query.committeeName };
     const committee = await READCOMMITTEEDB(query, fields);
 
     if (committee.length > 0) {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_FOUND, { committee });
-
       return res.status(StatusCodes.OK).send(committee);
     } else {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_NOT_FOUND, { committee });
@@ -137,6 +171,7 @@ const deleteCommittee = async (req, res) => {
 export {
   createCommittee as CREATECOMMITTEE,
   readCommittee as READCOMMITTEE,
+  readAllCommittees as READALLCOMMITTEES,
   updateCommittee as UPDATECOMMITTEE,
   deleteCommittee as DELETECOMMITTEE,
 };

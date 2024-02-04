@@ -20,7 +20,7 @@ const committeeSchema = new mongoose.Schema({
   },
   committeeHeads: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "headsandmanagement",
+    ref: "heads",
     required: false,
   }],
   committeeMembers: [{
