@@ -24,7 +24,6 @@ import {
 
 const createCSR = async (req, res) => {
   try {
-    const { csrYear } = req.body;
     const csrImageURL = `${SERVER_URI}/images/csr/${req.files["csrImg"][0].filename}`;
 
     const query = { csrImageURL };
@@ -37,7 +36,6 @@ const createCSR = async (req, res) => {
     }
 
     const csr = await CREATECSRDB({
-      csrYear,
       csrImageURL,
     });
 

@@ -101,6 +101,7 @@ const readAllCommittees = async (req, res) => {
 
 const readCommittee = async (req, res) => {
   try {
+    console.log("Read");
     const query = !req.query.committeeName
       ? {}
       : { committeeName: req.query.committeeName };
