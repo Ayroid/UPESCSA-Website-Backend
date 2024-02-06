@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 import moment from "moment-timezone";
 
 const csrSchema = new mongoose.Schema({
+  csrName: {
+    type: String,
+    required: true,
+  },
   csrImageURL: {
     type: String,
     required: true,
