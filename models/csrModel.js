@@ -6,6 +6,14 @@ const csrSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  spanx: {
+    type: String,
+    required: true,
+  },
+  spany: {
+    type: String,
+    required: true,
+  },
   created_at: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
