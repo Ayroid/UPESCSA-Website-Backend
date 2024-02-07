@@ -6,7 +6,7 @@ import {
   UPDATEPREVIOUSEVENT,
   READPREVIOUSEVENT,
   DELETEPREVIOUSEVENT,
-} from "../controllers/previousEventsController.js";
+} from "../controllers/previousEventController.js";
 
 const previousEventRouter = express.Router();
 
