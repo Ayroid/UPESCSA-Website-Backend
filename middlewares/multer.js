@@ -44,7 +44,10 @@ const storage = multer.diskStorage({
         cb(null, `${req.body.eventName}${path.extname(file.originalname)}`);
         break;
       case "previousEventImg":
-        cb(null, `${req.body.previousEventName}${path.extname(file.originalname)}`);
+        cb(
+          null,
+          `${req.body.previousEventName}${path.extname(file.originalname)}`
+        );
         break;
       case "csrImg":
         cb(null, `${req.body.csrName}${path.extname(file.originalname)}`);

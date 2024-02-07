@@ -25,9 +25,9 @@ import {
 const createCSR = async (req, res) => {
   try {
     const { csrName, spanx, spany } = req.body;
-    const csrImageURL = `${SERVER_URI}/images/csr/${req.files["csrImg"][0].filename}`;
+    const imageURL = `${SERVER_URI}/images/csr/${req.files["csrImg"][0].filename}`;
 
-    const query = { csrImageURL };
+    const query = { imageURL };
 
     const csrExists = await READCSRDB(query, fields);
     if (csrExists.length > 0) {
@@ -38,7 +38,7 @@ const createCSR = async (req, res) => {
 
     const csr = await CREATECSRDB({
       csrName,
-      csrImageURL,
+      imageURL,
       spanx,
       spany,
     });
