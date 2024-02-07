@@ -16,11 +16,13 @@ const previousEventSchema = new mongoose.Schema({
   },
   spanx: {
     type: String,
-    required: true,
+    required: false,
+    default: "span 1",
   },
   spany: {
     type: String,
-    required: true,
+    required: false,
+    default: "span 1",
   },
   created_at: {
     type: Date,
