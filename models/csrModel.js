@@ -6,7 +6,7 @@ const csrSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  csrImageURL: {
+  imageURL: {
     type: String,
     required: true,
   },

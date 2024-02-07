@@ -101,11 +101,10 @@ const readAllCommittees = async (req, res) => {
 
 const readCommittee = async (req, res) => {
   try {
-    console.log("Read");
     const query = !req.query.committeeName
       ? {}
       : { committeeName: req.query.committeeName };
-    const committee = await READCOMMITTEEDB(query, fields);
+    const committee = await READCOMMITTEEDB(query);
 
     if (committee.length > 0) {
       console.log(COMMITTEE_MESSAGES.COMMITTEE_FOUND, { committee });
