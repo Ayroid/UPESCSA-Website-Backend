@@ -6,13 +6,21 @@ const previousEventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  eventImageURL: {
+  imageURL: {
     type: String,
     required: true,
   },
   eventYear: {
     type: String,
     required: false,
+  },
+  spanx: {
+    type: String,
+    required: true,
+  },
+  spany: {
+    type: String,
+    required: true,
   },
   created_at: {
     type: Date,
@@ -26,9 +34,6 @@ const previousEventSchema = new mongoose.Schema({
   },
 });
 
-const previousEventModel = mongoose.model(
-  "previousevent",
-  previousEventSchema
-);
+const previousEventModel = mongoose.model("previousevent", previousEventSchema);
 
 export { previousEventModel as PREVIOUSEVENTMODEL };

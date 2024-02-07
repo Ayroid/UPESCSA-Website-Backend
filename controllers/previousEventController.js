@@ -22,8 +22,8 @@ import {
 
 const createPreviousEvent = async (req, res) => {
   try {
-    const { previousEventName, previousEventYear } = req.body;
-    const query = { previousEventName };
+    const { eventName, eventYear } = req.body;
+    const query = { eventName };
 
     const previousEventExists = await READPREVIOUSEVENTDB(query, fields);
     if (previousEventExists.length > 0) {
@@ -32,12 +32,12 @@ const createPreviousEvent = async (req, res) => {
         .send(EVENT_MESSAGES.EVENT_ALREADY_EXISTS);
     }
 
-    const previousEventImageURL = `${SERVER_URI}/images/previousEvents/${req.files["previousEventImg"][0].filename}`;
+    const imageURL = `${SERVER_URI}/images/previousEvents/${req.files["previousEventImg"][0].filename}`;
 
     const previousEvent = await CREATEPREVIOUSEVENTDB({
-        previousEventName,
-        previousEventImageURL,
-        previousEventYear,
+      eventName,
+      imageURL,
+      eventYear,
     });
 
     if (previousEvent) {
