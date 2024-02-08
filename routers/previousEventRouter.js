@@ -10,9 +10,13 @@ import {
 
 const previousEventRouter = express.Router();
 
-previousEventRouter.route("/")
+previousEventRouter
+  .route("/")
   .get(READPREVIOUSEVENT)
-  .post(UPLOAD.fields([{ name: "previousEventImg", maxCount: 1 }]), CREATEPREVIOUSEVENT)
+  .post(
+    UPLOAD.fields([{ name: "previousEventImg", maxCount: 1 }]),
+    CREATEPREVIOUSEVENT
+  )
   .put(UPDATEPREVIOUSEVENT)
   .delete(DELETEPREVIOUSEVENT);
 

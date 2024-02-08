@@ -14,12 +14,12 @@ const allianceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  created_at: {
+  createdAt: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: true,
   },
-  updated_at: {
+  updatedAt: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: false,

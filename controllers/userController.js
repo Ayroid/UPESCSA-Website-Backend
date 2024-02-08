@@ -12,7 +12,7 @@ const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS, 10);
 const fields = {
   __v: 0,
   password: 0,
-  created_at: 0,
+  createdAt: 0,
   updated_at: 0,
 };
 

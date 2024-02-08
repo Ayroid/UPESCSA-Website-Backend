@@ -62,12 +62,19 @@ const createPreviousEvent = async (req, res) => {
 
 const readPreviousEvent = async (req, res) => {
   try {
-    const query = !req.query._id ? {} : { _id: req.query.id };
-    const previousEvent = await READPREVIOUSEVENTDB(query, fields);
+    const { year, home } = req.query;
+    let previousEvent = [];
+    if (year) {
+      previousEvent = await READPREVIOUSEVENTDB({ eventYear: year }, fields);
+    }
+    if (home) {
+      previousEvent = await READPREVIOUSEVENTDB({}, fields, 12, {
+        createdAt: -1,
+      });
+    }
 
     if (previousEvent.length > 0) {
       console.log(EVENT_MESSAGES.EVENT_FOUND, { previousEvent });
-
       return res.status(StatusCodes.OK).send(previousEvent);
     } else {
       console.log(EVENT_MESSAGES.EVENT_NOT_FOUND, { previousEvent });
