@@ -53,7 +53,7 @@ const eventSchema = new mongoose.Schema({
       required: false,
     },
   ],
-  created_at: {
+  createdAt: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: true,

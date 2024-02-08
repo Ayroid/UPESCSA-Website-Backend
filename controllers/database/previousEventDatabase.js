@@ -19,9 +19,13 @@ const createPreviousEventDB = async (data) => {
   }
 };
 
-const readPreviousEventDB = async (query, fields) => {
+const readPreviousEventDB = async (query, fields, quantity, sortQuery) => {
   try {
-    const result = await PREVIOUSEVENTMODEL.find(query).select(fields);
+    const result = await PREVIOUSEVENTMODEL.find(query)
+      .sort(sortQuery)
+      .select(fields)
+      .limit(quantity);
+
     if (result.length > 0) {
       console.log(EVENT_MESSAGES.EVENT_READ);
       return result;

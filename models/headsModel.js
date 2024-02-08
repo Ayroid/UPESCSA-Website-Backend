@@ -22,11 +22,13 @@ const headsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  committee: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "committee",
-    required: false,
-  }],
+  committee: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "committee",
+      required: false,
+    },
+  ],
   linkedInURL: {
     type: String,
     required: false,
@@ -35,7 +37,7 @@ const headsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  created_at: {
+  createdAt: {
     type: Date,
     default: () => moment().tz("Asia/Kolkata").toDate(),
     required: true,
