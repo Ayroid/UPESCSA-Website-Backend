@@ -12,7 +12,7 @@ import { CSRROUTER } from "./routers/csrRouter.js";
 import { COMMITTEEROUTER } from "./routers/committeeRouter.js";
 import { COREMEMBERROUTER } from "./routers/coreMemberRouter.js";
 import { HEADSROUTER } from "./routers/headsRouter.js";
-import {PREVIOUSEVENTROUTER} from "./routers/previousEventRouter.js";
+import { PREVIOUSEVENTROUTER } from "./routers/previousEventRouter.js";
 
 // CONFIG
 dotenv.config();
