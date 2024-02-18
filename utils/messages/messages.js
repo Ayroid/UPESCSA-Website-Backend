@@ -163,6 +163,24 @@ const HEADS_MESSAGES = {
   ERROR_DELETING_HEADS: "Error Deleting Heads ❌ ",
 };
 
+const REGISTRATION_MESSAGES = {
+  REGISTRATION_ALREADY_EXISTS: "Registration Already Exists ❌ ",
+  REGISTRATION_CREATED: "Registration Created ✅ ",
+  REGISTRATION_NOT_CREATED: "Registration Not Created ❌ ",
+  REGISTRATION_FOUND: "Registration Found ✅ ",
+  REGISTRATION_NOT_FOUND: "Registration Not Found ❌ ",
+  REGISTRATION_READ: "Registration Read ✅ ",
+  REGISTRATION_NOT_READ: "Registration Not Read ❌ ",
+  REGISTRATION_UPDATED: "Registration Updated ✅ ",
+  REGISTRATION_NOT_UPDATED: "Registration Not Updated ❌ ",
+  REGISTRATION_DELETED: "Registration Deleted ✅ ",
+  REGISTRATION_NOT_DELETED: "Registration Not Deleted ❌ ",
+  ERROR_CREATING_REGISTRATION: "Error Creating Registration ❌ ",
+  ERROR_READING_REGISTRATION: "Error Reading Registration ❌ ",
+  ERROR_UPDATING_REGISTRATION: "Error Updating Registration ❌ ",
+  ERROR_DELETING_REGISTRATION: "Error Deleting Registration ❌ ",
+};
+
 export {
   DB_MESSAGES,
   SERVER_MESSAGES,
@@ -174,4 +192,5 @@ export {
   COMMITTEE_MESSAGES,
   COREMEMBER_MESSAGES,
   HEADS_MESSAGES,
+  REGISTRATION_MESSAGES,
 };

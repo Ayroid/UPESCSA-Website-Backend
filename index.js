@@ -12,7 +12,7 @@ import { CSRROUTER } from "./routers/csrRouter.js";
 import { COMMITTEEROUTER } from "./routers/committeeRouter.js";
 import { COREMEMBERROUTER } from "./routers/coreMemberRouter.js";
 import { HEADSROUTER } from "./routers/headsRouter.js";
-import {PREVIOUSEVENTROUTER} from "./routers/previousEventRouter.js";
+import { PREVIOUSEVENTROUTER } from "./routers/previousEventRouter.js";
 
 // CONFIG
 dotenv.config();
@@ -33,6 +33,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+// Serve static files from the 'images' directory
+app.use('/api/images', express.static('public/images'));
 
 // TEST ROUTE
 app.use("/api/test", (req, res) => {

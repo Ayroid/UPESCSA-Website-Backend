@@ -1,46 +1,38 @@
 import mongoose from "mongoose";
 import moment from "moment-timezone";
 
-const eventSchema = new mongoose.Schema({
-  eventName: {
+const hackerSummitSchema = new mongoose.Schema({
+  studentName: {
     type: String,
     required: true,
   },
-  eventDescription: {
+  email: {
     type: String,
     required: true,
   },
-  eventActive: {
+  phone: {
+    type: String,
+    required: true,
+  },
+  course: {
+    type: String,
+    required: true,
+  },
+  yearOfStudy: {
+    type: String,
+    required: true,
+  },
+  upesStudent: {
     type: Boolean,
     required: true,
   },
-  eventMode: {
+  collegeName: {
     type: String,
-    required: true,
+    required: false,
   },
-  eventTeamSize: {
-    type: Number,
-    required: true,
-  },
-  eventDateTime: {
+  sapID: {
     type: String,
-    required: true,
-  },
-  eventFormURL: {
-    type: String,
-    required: true,
-  },
-  eventImgURL: {
-    type: String,
-    required: true,
-  },
-  eventRegistrationStart: {
-    type: String,
-    required: true,
-  },
-  eventRegistrationEnd: {
-    type: String,
-    required: true,
+    required: false,
   },
   createdAt: {
     type: Date,
@@ -54,6 +46,6 @@ const eventSchema = new mongoose.Schema({
   },
 });
 
-const eventModel = mongoose.model("event", eventSchema);
+const hackerSummitModel = mongoose.model("hackerSummit", hackerSummitSchema);
 
-export { eventModel as EVENTMODEL };
+export { hackerSummitModel as HACKERSUMMITMODEL };
