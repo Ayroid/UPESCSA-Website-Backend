@@ -35,11 +35,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Serve static files from the 'images' directory
-app.use('/api/images', express.static('public/images'));
+app.use("/api/images", express.static("public/images"));
 
 // TEST ROUTE
 app.use("/api/test", (req, res) => {
-  res.send("Server ✅");
+  res.send("Server is running ✅");
 });
 
 //ROUTES
