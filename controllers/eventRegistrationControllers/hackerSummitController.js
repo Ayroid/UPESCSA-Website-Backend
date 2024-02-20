@@ -51,12 +51,10 @@ const createRegistration = async (req, res) => {
 
     if (event) {
       console.log(REGISTRATION_MESSAGES.REGISTRATION_CREATED, { event });
-      setTimeout(() => {
-        return res.status(StatusCodes.CREATED).send({
-          response: REGISTRATION_MESSAGES.REGISTRATION_CREATED,
-          eventId: event._id,
-        });
-      }, 10000);
+      return res.status(StatusCodes.CREATED).send({
+        response: REGISTRATION_MESSAGES.REGISTRATION_CREATED,
+        eventId: event._id,
+      });
     } else {
       console.log(REGISTRATION_MESSAGES.ERROR_CREATING_REGISTRATION, { error });
       return res
