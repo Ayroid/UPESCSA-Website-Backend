@@ -16,7 +16,7 @@ const teamMail = process.env.MAIL_TECH_ID;
 
 /* MAIL TEMPLATES IMPORTING */
 
-const { MAILTEMPLATES } = require("./mailtemplates");
+import { MAILTEMPLATES } from "./messages/mails.js";
 
 const transporter = nodemailer.createTransport({
   host,
