@@ -27,6 +27,9 @@ const storage = multer.diskStorage({
       case "headImg":
         cb(null, "public/images/heads");
         break;
+      case "frenzyPitchTransactionSS":
+        cb(null, "public/images/registrations/frenzypitch");
+        break;
       default:
         cb(null, "public/images/others");
         break;
@@ -44,10 +47,7 @@ const storage = multer.diskStorage({
         cb(null, `${req.body.eventName}${path.extname(file.originalname)}`);
         break;
       case "previousEventImg":
-        cb(
-          null,
-          `${req.body.eventName}${path.extname(file.originalname)}`
-        );
+        cb(null, `${req.body.eventName}${path.extname(file.originalname)}`);
         break;
       case "csrImg":
         cb(null, `${req.body.csrName}${path.extname(file.originalname)}`);
@@ -57,6 +57,9 @@ const storage = multer.diskStorage({
         break;
       case "headImg":
         cb(null, `${req.body.csaid}${path.extname(file.originalname)}`);
+        break;
+      case "frenzyPitchTransactionSS":
+        cb(null, `${req.body.teamLeadEmail}${path.extname(file.originalname)}`);
         break;
       default:
         cb(null, `${req.body.fileName}${path.extname(file.originalname)}`);
