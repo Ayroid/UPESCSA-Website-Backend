@@ -25,7 +25,7 @@ import {
 
 import { HACKERSUMMITMODEL } from "../../models/eventRegistrationModels/hackerSummitRegistrationModel.js";
 
-const createRegistration = async (req, res) => {
+const createHackerSummit = async (req, res) => {
   try {
     const {
       studentName,
@@ -69,7 +69,7 @@ const createRegistration = async (req, res) => {
   }
 };
 
-const readRegistration = async (req, res) => {
+const readHackerSummit = async (req, res) => {
   try {
     const query = !req.query._id ? {} : { _id: req.query.id };
     const event = await READEVENTREGISTRATIONDB(
@@ -97,6 +97,6 @@ const readRegistration = async (req, res) => {
 };
 
 export {
-  createRegistration as CREATEREGISTRATION,
-  readRegistration as READREGISTRATION,
+  createHackerSummit as CREATEHACKERSUMMIT,
+  readHackerSummit as READHACKERSUMMIT,
 };

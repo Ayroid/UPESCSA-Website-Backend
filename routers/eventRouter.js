@@ -9,9 +9,14 @@ import {
 } from "../controllers/eventsController.js";
 
 import {
-  CREATEREGISTRATION,
-  READREGISTRATION,
+  CREATEHACKERSUMMIT,
+  READHACKERSUMMIT,
 } from "../controllers/eventRegistrationControllers/hackerSummitController.js";
+
+import {
+  CREATEFRENZYPITCH,
+  READFRENZYPITCH,
+} from "../controllers/eventRegistrationControllers/frenzyPitchController.js";
 
 const EventRouter = express.Router();
 
@@ -21,8 +26,15 @@ EventRouter.route("/")
   .put(UPDATEEVENT)
   .delete(DELETEEVENT);
 
+EventRouter.route("/register/frenzypitch")
+  .get(READFRENZYPITCH)
+  .post(
+    UPLOAD.fields([{ name: "frenzyPitchTransactionSS", maxCount: 1 }]),
+    CREATEFRENZYPITCH
+  );
+
 EventRouter.route("/register/hackersummit")
-  .get(READREGISTRATION)
-  .post(CREATEREGISTRATION);
+  .get(READHACKERSUMMIT)
+  .post(CREATEHACKERSUMMIT);
 
 export { EventRouter as EVENTROUTER };
