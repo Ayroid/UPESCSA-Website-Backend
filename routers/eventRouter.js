@@ -18,6 +18,16 @@ import {
   READFRENZYPITCH,
 } from "../controllers/eventRegistrationControllers/frenzyPitchController.js";
 
+import {
+  CREATEULTIMATESHOWDOWN,
+  READULTIMATESHOWDOWN,
+} from "../controllers/eventRegistrationControllers/ultimateShowdownController.js";
+
+import {
+  CREATEVIRTUALESCAPEROOM,
+  READVIRTUALESCAPEROOM,
+} from "../controllers/eventRegistrationControllers/virtualEscapeController.js";
+
 const EventRouter = express.Router();
 
 EventRouter.route("/")
@@ -31,6 +41,20 @@ EventRouter.route("/register/frenzypitch")
   .post(
     UPLOAD.fields([{ name: "frenzyPitchTransactionSS", maxCount: 1 }]),
     CREATEFRENZYPITCH
+  );
+
+EventRouter.route("/register/virtualescaperoom")
+  .get(READVIRTUALESCAPEROOM)
+  .post(
+    UPLOAD.fields([{ name: "virtualEscapeTransactionSS", maxCount: 1 }]),
+    CREATEVIRTUALESCAPEROOM
+  );
+
+EventRouter.route("/register/ultimateshowdown")
+  .get(READULTIMATESHOWDOWN)
+  .post(
+    UPLOAD.fields([{ name: "ultimateShowdownTransactionSS", maxCount: 1 }]),
+    CREATEULTIMATESHOWDOWN
   );
 
 EventRouter.route("/register/hackersummit")
