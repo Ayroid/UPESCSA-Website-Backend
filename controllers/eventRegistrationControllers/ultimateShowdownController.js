@@ -27,14 +27,15 @@ import { ULTIMATESHOWDOWNMODEL } from "../../models/eventRegistrationModels/ulti
 
 const createUltimateShowdown = async (req, res) => {
   try {
-    let {
+    const {
       name,
       email,
+      phone,
       sapID,
       course,
       yearOfStudy,
-      CSAMember,
-      CSAID,
+      csaMember,
+      csaID,
       transactionID,
     } = req.body;
 
@@ -43,13 +44,14 @@ const createUltimateShowdown = async (req, res) => {
     const transactionSS = `${SERVER_URI}/images/registrations/ultimateShowdown/${req.files["ultimateShowdownTransactionSS"][0].filename}`;
 
     const registered = await CREATEEVENTREGISTRATIONDB(ULTIMATESHOWDOWNMODEL, {
-    name,
+      name,
       email,
+      phone,
       sapID,
       course,
       yearOfStudy,
-      CSAMember,
-      CSAID,
+      csaMember,
+      csaID,
       transactionID,
       transactionSS,
     });

@@ -10,7 +10,7 @@ const ultimateShowdonwSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  sapID: {
+  phone: {
     type: String,
     required: true,
   },
@@ -22,13 +22,16 @@ const ultimateShowdonwSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
-  CSAMember: {
+  sapID: {
+    type: String,
+    required: true,
+  },
+  csaMember: {
     type: String,
     required: true,
     default: "No",
   },
-  CSAID: {
+  csaID: {
     type: String,
     required: false,
     default: "-",
@@ -54,7 +57,7 @@ const ultimateShowdonwSchema = new mongoose.Schema({
 });
 
 const ultimateShowDownModel = mongoose.model(
-  "ultimateShowdonw",
+  "ultimateShowdown",
   ultimateShowdonwSchema
 );
 

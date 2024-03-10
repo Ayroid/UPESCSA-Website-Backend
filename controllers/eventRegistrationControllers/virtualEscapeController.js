@@ -52,7 +52,7 @@ const createVirtualEscapeRoom = async (req, res) => {
 
     console.log(req.files);
 
-    const transactionSS = `${SERVER_URI}/images/registrations/virtualEscape/${req.files["virtualEscapeTransactionSS"][0].filename}`;
+    const transactionSS = `${SERVER_URI}/images/registrations/virtualEscapeRoom/${req.files["virtualEscapeTransactionSS"][0].filename}`;
 
 
     if (teamSize < 2) {

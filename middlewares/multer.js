@@ -31,7 +31,7 @@ const storage = multer.diskStorage({
         cb(null, "public/images/registrations/frenzypitch");
         break;
       case "virtualEscapeTransactionSS":
-        cb(null, "public/images/registrations/virtualEscape");
+        cb(null, "public/images/registrations/virtualEscapeRoom");
         break;
       case "ultimateShowdownTransactionSS":
         cb(null, "public/images/registrations/ultimateShowdown");
