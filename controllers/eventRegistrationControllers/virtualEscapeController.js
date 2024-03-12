@@ -21,10 +21,13 @@ import {
   READEVENTREGISTRATIONDB,
 } from "../database/eventRegistrationDatabase.js";
 
+// MAILING FUNCTION
+
+import { SENDMAIL } from "../../utils/mailer.js";
+
 // IMPORT MODELS
 
 import { VIRTUALESCAPEROOMMODEL } from "../../models/eventRegistrationModels/virtualEscapeRoom.js";
-import { VirtualType } from "mongoose";
 
 const createVirtualEscapeRoom = async (req, res) => {
   try {
@@ -53,7 +56,6 @@ const createVirtualEscapeRoom = async (req, res) => {
     console.log(req.files);
 
     const transactionSS = `${SERVER_URI}/images/registrations/virtualEscapeRoom/${req.files["virtualEscapeTransactionSS"][0].filename}`;
-
 
     if (teamSize < 2) {
       memberTwoName = "-";
@@ -91,6 +93,9 @@ const createVirtualEscapeRoom = async (req, res) => {
 
     if (registered) {
       console.log(REGISTRATION_MESSAGES.REGISTRATION_CREATED, { registered });
+
+      SENDMAIL(teamName, memberOneEmail, "VIRTUALESCAPEROOM");
+
       return res.status(StatusCodes.CREATED).send({
         response: REGISTRATION_MESSAGES.REGISTRATION_CREATED,
         eventId: registered._id,

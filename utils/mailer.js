@@ -63,6 +63,4 @@ function sendMail(username, email, template) {
   }
 }
 
-module.exports = {
-  SENDMAIL: sendMail,
-};
+export { sendMail as SENDMAIL };

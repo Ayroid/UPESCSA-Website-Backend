@@ -357,6 +357,251 @@ const templates = {
 </html>
     `,
   },
+  FRENZYPITCH: {
+    subject: "Successful Registration Confirmation - FRENZY PITCH!",
+    html: `
+    <html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #000;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1895ee;
+      }
+      div {
+        line-height: 1.3;
+        color: #ffffff;
+      }
+      .socials {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      svg {
+        margin: 0 5px;
+        height: 30px;
+      }
+      hr{
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>FRENZY PITCH</h1>
+      <h2>Registration Successful!!</h2>
+      <div>
+        Hi Team username,
+        <br />
+        <br />
+        UPES CSA congratulates you for successfully registering for <strong>FRENZY PITCH!</strong>
+        <br />
+        <br />
+        This event will be held on <strong>19th March 2024, 12 PM onwards</strong>.
+        <br />
+        <br />
+        Further information about the workshop will be shared soon through mail with you all.
+        <br />
+        <br />
+        Kindly join the <strong><a href="https://chat.whatsapp.com/EkQUCUaPhKj8Na5F1cFEMT">WhatsApp</a></strong> group for
+        further updates. In case of any queries, feel free to reach the
+        undersigned: <br /><br />
+        Aditi Bansal<br />
+        +91 70235 03337<br /><br />
+        Varun Gupta<br />
+        +91 98370 22331<br /><br />
+        Thanks, and Regards <br />
+        Team UPES CSA
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>
+    `,
+  },
+  VIRTUALESCAPEROOM: {
+    subject: "Successful Registration Confirmation - VIRTUAL ESCAPE ROOM!",
+    html: `
+    <html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #000;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1895ee;
+      }
+      div {
+        line-height: 1.3;
+        color: #ffffff;
+      }
+      .socials {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      svg {
+        margin: 0 5px;
+        height: 30px;
+      }
+      hr{
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>VIRTUAL ESCAPE ROOM</h1>
+      <h2>Registration Successful!!</h2>
+      <div>
+        Hi Team username,
+        <br />
+        <br />
+        UPES CSA congratulates you for successfully registering for <strong>VIRTUAL ESCAPE ROOM!</strong>
+        <br />
+        <br />
+        This event will be held on <strong>20th March 2024, 11 AM onwards</strong>.
+        <br />
+        Further information about the workshop will be shared soon through mail with you all.
+        <br />
+        <br />
+        Kindly join the <strong><a href="https://chat.whatsapp.com/FwtiqPHV9vp98v9OiqkNad">WhatsApp</a></strong> group for
+        further updates. In case of any queries, feel free to reach the
+        undersigned: <br /><br />
+        Anvita<br />
+        +91 98992 11798<br /><br />
+        Shreyanshi<br />
+        +91 89537 05017<br /><br />
+        Thanks, and Regards <br />
+        Team UPES CSA
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>
+    `,
+  },
+  ULTIMATESHOWDOWN: {
+    subject: "Successful Registration Confirmation - THE ULTIMATE SHOWDOWN!",
+    html: `
+    <html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #000;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1895ee;
+      }
+      div {
+        line-height: 1.3;
+        color: #ffffff;
+      }
+      .socials {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      svg {
+        margin: 0 5px;
+        height: 30px;
+      }
+      hr{
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>THE ULTIMATE SHOWDOWN</h1>
+      <h2>Registration Successful!!</h2>
+      <div>
+        Hi username,
+        <br />
+        <br />
+        UPES CSA congratulates you for successfully registering for <strong>THE ULTIMATE SHOWDOWN!</strong>
+        <br />
+        <br />
+        This event will be held on <strong>20th March 2024, 3 PM onwards</strong>.
+        <br />
+        <br />
+        Further information about the workshop will be shared soon through mail with you all.
+        <br />
+        <br />
+        Kindly join the <strong><a href="https://chat.whatsapp.com/KOs5eU309ktJzLEhSvkSLD">WhatsApp</a></strong> group for
+        further updates. In case of any queries, feel free to reach the
+        undersigned: <br /><br />
+        Garv Malhotra<br />
+        +91 98768 66366<br /><br />
+        Mahika Bhardwaj<br />
+        +91 79881 54904<br /><br />
+        Thanks, and Regards <br />
+        Team UPES CSA
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>
+    `,
+  },
 };
 
-module.exports = { MAILTEMPLATES: templates };
+export { templates as MAILTEMPLATES };

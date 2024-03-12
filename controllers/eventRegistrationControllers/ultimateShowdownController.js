@@ -21,6 +21,10 @@ import {
   READEVENTREGISTRATIONDB,
 } from "../database/eventRegistrationDatabase.js";
 
+// MAILING FUNCTION
+
+import { SENDMAIL } from "../../utils/mailer.js";
+
 // IMPORT MODELS
 
 import { ULTIMATESHOWDOWNMODEL } from "../../models/eventRegistrationModels/ultimateShowdown.js";
@@ -58,6 +62,9 @@ const createUltimateShowdown = async (req, res) => {
 
     if (registered) {
       console.log(REGISTRATION_MESSAGES.REGISTRATION_CREATED, { registered });
+
+      SENDMAIL(name, email, "ULTIMATESHOWDOWN");
+
       return res.status(StatusCodes.CREATED).send({
         response: REGISTRATION_MESSAGES.REGISTRATION_CREATED,
         eventId: registered._id,
