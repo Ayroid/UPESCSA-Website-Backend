@@ -36,6 +36,9 @@ const storage = multer.diskStorage({
       case "ultimateShowdownTransactionSS":
         cb(null, "public/images/registrations/ultimateShowdown");
         break;
+      case "hackathonTransactionSS":
+        cb(null, "public/images/hackathon");
+        break;
       default:
         cb(null, "public/images/others");
         break;
@@ -67,12 +70,20 @@ const storage = multer.diskStorage({
       case "frenzyPitchTransactionSS":
         cb(null, `${req.body.teamLeadEmail}${path.extname(file.originalname)}`);
         break;
-        case "virtualEscapeTransactionSS":
-        cb(null, `${req.body.memberOneEmail}${path.extname(file.originalname)}`);
+      case "virtualEscapeTransactionSS":
+        cb(
+          null,
+          `${req.body.memberOneEmail}${path.extname(file.originalname)}`
+        );
         break;
-        case "ultimateShowdownTransactionSS":
+      case "ultimateShowdownTransactionSS":
         cb(null, `${req.body.email}${path.extname(file.originalname)}`);
         break;
+
+      case "hackathonTransactionSS":
+        cb(null, `${req.body.teamLeadEmail}${path.extname(file.originalname)}`);
+        break;
+
       default:
         cb(null, `${req.body.fileName}${path.extname(file.originalname)}`);
         break;

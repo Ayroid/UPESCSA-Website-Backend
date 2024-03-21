@@ -602,6 +602,87 @@ const templates = {
 </html>
     `,
   },
+  HACKATHON: {
+    subject: "Successful Registration Confirmation - HACKATHON 3.0!",
+    html: `
+    <html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #000;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1895ee;
+      }
+      div {
+        line-height: 1.3;
+        color: #ffffff;
+      }
+      .socials {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      svg {
+        margin: 0 5px;
+        height: 30px;
+      }
+      hr{
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>HACKATHON 3.0</h1>
+      <h2>Registration Successful!!</h2>
+      <div>
+        Hi Team username,
+        <br />
+        <br />
+        Congratulations!  You've taken an exciting step towards becoming a catalyst for innovation by registering for <strong>Hackathon 3.0!</strong>
+        <br />
+        <br />
+        The highly anticipated Hackathon 3.0 is just around the corner, scheduled to take place on  <strong>12th - 14th April 2024</strong>. The event will be conducted entirely online, ensuring accessibility to all participants regardless of location.
+        <br />
+        <br />
+        Further information regarding the event, including the agenda and any additional requirements, will be shared with you via email closer to the event date.
+        <br />
+        <br />
+        We encourage you to join our dedicated <strong><a href="https://chat.whatsapp.com/EkQUCUaPhKj8Na5F1cFEMT">WhatsApp</a></strong> group for immediate updates and important announcements.
+        Should you have any questions or require further assistance, please do not hesitate to contact us:<br /><br />
+        Aman Agarwal<br />
+        +91 88280 44674<br /><br />
+        Sanya Gilhotra<br />
+        +91 89586 11888<br /><br />
+        Thanks, and Regards <br />
+        Team UPES CSA
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>
+    `,
+  },
 };
 
 export { templates as MAILTEMPLATES };
