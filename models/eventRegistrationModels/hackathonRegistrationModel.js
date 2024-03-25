@@ -10,10 +10,6 @@ const hackathonSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  teamCategory: {
-    type: String,
-    required: true,
-  },
   teamLeadName: {
     type: String,
     required: true,

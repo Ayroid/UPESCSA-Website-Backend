@@ -34,7 +34,6 @@ const createHackathon = async (req, res) => {
     let {
       teamName,
       teamSize,
-      teamCategory,
       teamLeadName,
       teamLeadEmail,
       teamLeadPhone,
@@ -88,6 +87,8 @@ const createHackathon = async (req, res) => {
       memberFourPhone = "-";
       memberFourCourse = "-";
       memberFourYearOfStudy = "-";
+      memberFourUPESStudent = "-";
+      memberFourCollegeName = "-";
       memberFourSapID = "-";
       memberFourCSAMember = "-";
       memberFourCSAID = "-";
@@ -99,6 +100,8 @@ const createHackathon = async (req, res) => {
       memberThreePhone = "-";
       memberThreeCourse = "-";
       memberThreeYearOfStudy = "-";
+      memberThreeUPESStudent = "-";
+      memberThreeCollegeName = "-";
       memberThreeSapID = "-";
       memberThreeCSAMember = "-";
       memberThreeCSAID = "-";
@@ -139,7 +142,6 @@ const createHackathon = async (req, res) => {
     const registered = await CREATEEVENTREGISTRATIONDB(HACKATHONMODEL, {
       teamName,
       teamSize,
-      teamCategory,
       teamLeadName,
       teamLeadEmail,
       teamLeadPhone,

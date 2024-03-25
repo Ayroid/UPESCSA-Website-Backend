@@ -662,13 +662,13 @@ const templates = {
         Congratulations!  You've taken an exciting step towards becoming a catalyst for innovation by registering for <strong>Hackathon 3.0!</strong>
         <br />
         <br />
-        The highly anticipated Hackathon 3.0 is just around the corner, scheduled to take place on  <strong>12th - 14th April 2024</strong>. The event will be conducted entirely online, ensuring accessibility to all participants regardless of location.
+        The highly anticipated Hackathon 3.0 is just around the corner, scheduled to take place on  <strong>19th - 21th April 2024</strong>. The event will be conducted entirely online, ensuring accessibility to all participants regardless of location.
         <br />
         <br />
         Further information regarding the event, including the agenda and any additional requirements, will be shared with you via email closer to the event date.
         <br />
         <br />
-        We encourage you to join our dedicated <strong><a href="https://chat.whatsapp.com/EkQUCUaPhKj8Na5F1cFEMT">WhatsApp</a></strong> group for immediate updates and important announcements.
+        We encourage you to join our dedicated <strong><a href="https://chat.whatsapp.com/LRouuNA8hFx73tFVQguPf9">WhatsApp</a></strong> group for immediate updates and important announcements.
         Should you have any questions or require further assistance, please do not hesitate to contact us:<br /><br />
         Aman Agarwal<br />
         +91 88280 44674<br /><br />
