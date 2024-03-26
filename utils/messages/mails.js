@@ -670,8 +670,8 @@ const templates = {
         <br />
         We encourage you to join our dedicated <strong><a href="https://chat.whatsapp.com/LRouuNA8hFx73tFVQguPf9">WhatsApp</a></strong> group for immediate updates and important announcements.
         Should you have any questions or require further assistance, please do not hesitate to contact us:<br /><br />
-        Aman Agarwal<br />
-        +91 88280 44674<br /><br />
+        Ananya Mathur<br />
+        +91 99534 38518<br /><br />
         Sanya Gilhotra<br />
         +91 89586 11888<br /><br />
         Thanks, and Regards <br />
