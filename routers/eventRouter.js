@@ -28,10 +28,10 @@ import {
   READVIRTUALESCAPEROOM,
 } from "../controllers/eventRegistrationControllers/virtualEscapeController.js";
 
-import {
-  CREATEHACKATHON,
-  READHACKATHON,
-} from "../controllers/eventRegistrationControllers/hackathonController.js";
+// import {
+//   CREATEHACKATHON,
+//   READHACKATHON,
+// } from "../controllers/eventRegistrationControllers/hackathonController.js";
 
 const EventRouter = express.Router();
 
@@ -66,11 +66,11 @@ EventRouter.route("/register/hackersummit")
   .get(READHACKERSUMMIT)
   .post(CREATEHACKERSUMMIT);
 
-EventRouter.route("/hackathon/register")
-  .get(READHACKATHON)
-  .post(
-    UPLOAD.fields([{ name: "hackathonTransactionSS", maxCount: 1 }]),
-    CREATEHACKATHON
-  );
+// EventRouter.route("/hackathon/register")
+//   .get(READHACKATHON)
+//   .post(
+//     UPLOAD.fields([{ name: "hackathonTransactionSS", maxCount: 1 }]),
+//     CREATEHACKATHON
+//   );
 
 export { EventRouter as EVENTROUTER };

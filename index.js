@@ -13,6 +13,7 @@ import { COMMITTEEROUTER } from "./routers/committeeRouter.js";
 import { COREMEMBERROUTER } from "./routers/coreMemberRouter.js";
 import { HEADSROUTER } from "./routers/headsRouter.js";
 import { PREVIOUSEVENTROUTER } from "./routers/previousEventRouter.js";
+import { HACKATHONPSROUTER } from "./routers/hackathonPSRouter.js";
 
 // CONFIG
 dotenv.config();
@@ -51,6 +52,7 @@ app.use("/api/committee", COMMITTEEROUTER);
 app.use("/api/coremember", COREMEMBERROUTER);
 app.use("/api/head", HEADSROUTER);
 app.use("/api/previousevent", PREVIOUSEVENTROUTER);
+app.use("/api/hackathon/ps", HACKATHONPSROUTER);
 
 // DATABASE DISCONNECTION
 process.on("SIGINT", () => {
